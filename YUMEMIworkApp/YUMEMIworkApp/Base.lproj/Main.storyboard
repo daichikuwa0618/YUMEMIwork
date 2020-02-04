@@ -15,55 +15,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="X4w-er-TIF">
-                                <rect key="frame" x="0.0" y="94" width="414" height="253"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XPI-me-Lod">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                                        <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="ch4-4B-95x"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xH5-hY-bDC">
-                                        <rect key="frame" x="0.0" y="114" width="414" height="32"/>
-                                        <segments>
-                                            <segment title="ひらがな"/>
-                                            <segment title="カタカナ"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="kanaSelectControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="J7b-7R-6Pq"/>
-                                        </connections>
-                                    </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvh-Qp-UfL">
-                                        <rect key="frame" x="0.0" y="159" width="414" height="30"/>
-                                        <state key="normal" title="変換！"/>
-                                        <connections>
-                                            <action selector="tapConvert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q86-E9-eOn"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-GL-PeY">
-                                        <rect key="frame" x="0.0" y="203" width="414" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XPI-me-Lod">
+                                <rect key="frame" x="0.0" y="94" width="414" height="100"/>
+                                <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="kZz-GL-PeY" firstAttribute="centerX" secondItem="X4w-er-TIF" secondAttribute="centerX" id="EXa-BP-X9k"/>
-                                    <constraint firstItem="Nvh-Qp-UfL" firstAttribute="centerX" secondItem="X4w-er-TIF" secondAttribute="centerX" id="qRf-Rw-6sz"/>
-                                    <constraint firstItem="XPI-me-Lod" firstAttribute="centerX" secondItem="X4w-er-TIF" secondAttribute="centerX" id="yjA-0V-4sU"/>
+                                    <constraint firstAttribute="height" constant="100" id="ch4-4B-95x"/>
                                 </constraints>
-                            </stackView>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xH5-hY-bDC">
+                                <rect key="frame" x="0.0" y="194" width="414" height="32"/>
+                                <segments>
+                                    <segment title="ひらがな"/>
+                                    <segment title="カタカナ"/>
+                                </segments>
+                                <connections>
+                                    <action selector="kanaSelectControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="J7b-7R-6Pq"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvh-Qp-UfL">
+                                <rect key="frame" x="184" y="245" width="46" height="30"/>
+                                <state key="normal" title="変換！"/>
+                                <connections>
+                                    <action selector="tapConvert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q86-E9-eOn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-GL-PeY">
+                                <rect key="frame" x="20" y="295" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="X4w-er-TIF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Caf-gC-Zko"/>
-                            <constraint firstItem="X4w-er-TIF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="SuG-vk-P6F"/>
-                            <constraint firstItem="X4w-er-TIF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pkd-o5-Mx7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xH5-hY-bDC" secondAttribute="trailing" id="1b0-qs-WsX"/>
+                            <constraint firstItem="kZz-GL-PeY" firstAttribute="top" secondItem="Nvh-Qp-UfL" secondAttribute="bottom" constant="20" id="1qe-9m-b2p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kZz-GL-PeY" secondAttribute="trailing" constant="20" id="CCT-QL-DRB"/>
+                            <constraint firstItem="kZz-GL-PeY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="D0G-gB-cxB"/>
+                            <constraint firstItem="Nvh-Qp-UfL" firstAttribute="top" secondItem="xH5-hY-bDC" secondAttribute="bottom" constant="20" id="QHZ-aN-Cnz"/>
+                            <constraint firstItem="Nvh-Qp-UfL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RkJ-HZ-Eqf"/>
+                            <constraint firstItem="XPI-me-Lod" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tm9-bI-3SO"/>
+                            <constraint firstItem="XPI-me-Lod" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="XYU-j1-O6J"/>
+                            <constraint firstItem="XPI-me-Lod" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="a9d-dq-3n4"/>
+                            <constraint firstItem="xH5-hY-bDC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bXg-Gq-dcL"/>
+                            <constraint firstItem="kZz-GL-PeY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hcE-tD-Wnq"/>
+                            <constraint firstItem="XPI-me-Lod" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jgZ-X7-zWf"/>
+                            <constraint firstItem="xH5-hY-bDC" firstAttribute="top" secondItem="XPI-me-Lod" secondAttribute="bottom" id="qQW-0i-h46"/>
+                            <constraint firstItem="xH5-hY-bDC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xMh-uW-GhT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
