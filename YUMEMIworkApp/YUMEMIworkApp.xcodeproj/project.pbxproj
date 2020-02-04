@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2183E9D4A26664CA64C4D034 /* Pods_YUMEMIworkApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB969F2241BAA5EAE784FE2 /* Pods_YUMEMIworkApp.framework */; };
+		39283F80C1D4E8C927485A4A /* Pods_YUMEMIworkAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38046D1AA46C0EC31C8E4985 /* Pods_YUMEMIworkAppTests.framework */; };
 		42590DE023E9869300528E4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590DDF23E9869300528E4D /* AppDelegate.swift */; };
 		42590DE223E9869300528E4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590DE123E9869300528E4D /* SceneDelegate.swift */; };
 		42590DE423E9869300528E4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590DE323E9869300528E4D /* ViewController.swift */; };
@@ -17,9 +19,10 @@
 		42590E0223E9869500528E4D /* YUMEMIworkAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E0123E9869500528E4D /* YUMEMIworkAppUITests.swift */; };
 		42590E1323E98B1B00528E4D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1223E98B1B00528E4D /* MainView.swift */; };
 		42590E1523E9966B00528E4D /* GooTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1423E9966B00528E4D /* GooTask.swift */; };
-		42590E1823E9970400528E4D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 42590E1723E9970400528E4D /* Alamofire */; };
+		42590E1823E9970400528E4D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 42590E1723E9970400528E4D /* SwiftPackageProductDependency */; };
 		42590E1A23E9972600528E4D /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1923E9972600528E4D /* APIClientProtocol.swift */; };
 		42590E1C23E9976600528E4D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1B23E9976600528E4D /* APIClient.swift */; };
+		B3E021F0182A770D8C38EDF1 /* Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D8DC892323A9C65A4BB5A0 /* Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38046D1AA46C0EC31C8E4985 /* Pods_YUMEMIworkAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YUMEMIworkAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42590DDC23E9869300528E4D /* YUMEMIworkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUMEMIworkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42590DDF23E9869300528E4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42590DE123E9869300528E4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +62,14 @@
 		42590E1423E9966B00528E4D /* GooTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooTask.swift; sourceTree = "<group>"; };
 		42590E1923E9972600528E4D /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
 		42590E1B23E9976600528E4D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		533D1FD04EE9094DDB6EEB4F /* Pods-YUMEMIworkApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUMEMIworkApp.release.xcconfig"; path = "Target Support Files/Pods-YUMEMIworkApp/Pods-YUMEMIworkApp.release.xcconfig"; sourceTree = "<group>"; };
+		5508E089F81F729EACF6CB56 /* Pods-YUMEMIworkApp-YUMEMIworkAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUMEMIworkApp-YUMEMIworkAppUITests.release.xcconfig"; path = "Target Support Files/Pods-YUMEMIworkApp-YUMEMIworkAppUITests/Pods-YUMEMIworkApp-YUMEMIworkAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		64D8DC892323A9C65A4BB5A0 /* Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A2B76735F859ADD67C834D3 /* Pods-YUMEMIworkApp-YUMEMIworkAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUMEMIworkApp-YUMEMIworkAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-YUMEMIworkApp-YUMEMIworkAppUITests/Pods-YUMEMIworkApp-YUMEMIworkAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8B8B0F5BE6047C8066F7B91 /* Pods-YUMEMIworkAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUMEMIworkAppTests.debug.xcconfig"; path = "Target Support Files/Pods-YUMEMIworkAppTests/Pods-YUMEMIworkAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD3CE37967B72F91FBD99172 /* Pods-YUMEMIworkApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUMEMIworkApp.debug.xcconfig"; path = "Target Support Files/Pods-YUMEMIworkApp/Pods-YUMEMIworkApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CBB969F2241BAA5EAE784FE2 /* Pods_YUMEMIworkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YUMEMIworkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8E79C57955C5099195F8FC4 /* Pods-YUMEMIworkAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUMEMIworkAppTests.release.xcconfig"; path = "Target Support Files/Pods-YUMEMIworkAppTests/Pods-YUMEMIworkAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42590E1823E9970400528E4D /* Alamofire in Frameworks */,
+				42590E1823E9970400528E4D /* BuildFile in Frameworks */,
+				2183E9D4A26664CA64C4D034 /* Pods_YUMEMIworkApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39283F80C1D4E8C927485A4A /* Pods_YUMEMIworkAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3E021F0182A770D8C38EDF1 /* Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +108,8 @@
 				42590DF523E9869500528E4D /* YUMEMIworkAppTests */,
 				42590E0023E9869500528E4D /* YUMEMIworkAppUITests */,
 				42590DDD23E9869300528E4D /* Products */,
+				D6D4609DC15A3E55E9F0B8DF /* Pods */,
+				DD2203EB361ACDFEC7072BB2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +183,30 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D6D4609DC15A3E55E9F0B8DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD3CE37967B72F91FBD99172 /* Pods-YUMEMIworkApp.debug.xcconfig */,
+				533D1FD04EE9094DDB6EEB4F /* Pods-YUMEMIworkApp.release.xcconfig */,
+				6A2B76735F859ADD67C834D3 /* Pods-YUMEMIworkApp-YUMEMIworkAppUITests.debug.xcconfig */,
+				5508E089F81F729EACF6CB56 /* Pods-YUMEMIworkApp-YUMEMIworkAppUITests.release.xcconfig */,
+				A8B8B0F5BE6047C8066F7B91 /* Pods-YUMEMIworkAppTests.debug.xcconfig */,
+				F8E79C57955C5099195F8FC4 /* Pods-YUMEMIworkAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DD2203EB361ACDFEC7072BB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBB969F2241BAA5EAE784FE2 /* Pods_YUMEMIworkApp.framework */,
+				64D8DC892323A9C65A4BB5A0 /* Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework */,
+				38046D1AA46C0EC31C8E4985 /* Pods_YUMEMIworkAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42590E0623E9869500528E4D /* Build configuration list for PBXNativeTarget "YUMEMIworkApp" */;
 			buildPhases = (
+				B9201B57D44C495383F2CE96 /* [CP] Check Pods Manifest.lock */,
 				42590DD823E9869300528E4D /* Sources */,
 				42590DD923E9869300528E4D /* Frameworks */,
 				42590DDA23E9869300528E4D /* Resources */,
+				540C55B3A362372452EBE9C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,7 +226,7 @@
 			);
 			name = YUMEMIworkApp;
 			packageProductDependencies = (
-				42590E1723E9970400528E4D /* Alamofire */,
+				42590E1723E9970400528E4D /* SwiftPackageProductDependency */,
 			);
 			productName = YUMEMIworkApp;
 			productReference = 42590DDC23E9869300528E4D /* YUMEMIworkApp.app */;
@@ -193,6 +236,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42590E0923E9869500528E4D /* Build configuration list for PBXNativeTarget "YUMEMIworkAppTests" */;
 			buildPhases = (
+				A505E539667406E6D59309CC /* [CP] Check Pods Manifest.lock */,
 				42590DEE23E9869500528E4D /* Sources */,
 				42590DEF23E9869500528E4D /* Frameworks */,
 				42590DF023E9869500528E4D /* Resources */,
@@ -211,9 +255,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42590E0C23E9869500528E4D /* Build configuration list for PBXNativeTarget "YUMEMIworkAppUITests" */;
 			buildPhases = (
+				B865C5E915C51A9CE0FFED69 /* [CP] Check Pods Manifest.lock */,
 				42590DF923E9869500528E4D /* Sources */,
 				42590DFA23E9869500528E4D /* Frameworks */,
 				42590DFB23E9869500528E4D /* Resources */,
+				8CFE28AD9F2BF002AE4187A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,7 +304,7 @@
 			);
 			mainGroup = 42590DD323E9869300528E4D;
 			packageReferences = (
-				42590E1623E9970400528E4D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				42590E1623E9970400528E4D /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 42590DDD23E9869300528E4D /* Products */;
 			projectDirPath = "";
@@ -297,6 +343,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		540C55B3A362372452EBE9C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YUMEMIworkApp/Pods-YUMEMIworkApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YUMEMIworkApp/Pods-YUMEMIworkApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YUMEMIworkApp/Pods-YUMEMIworkApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CFE28AD9F2BF002AE4187A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YUMEMIworkApp-YUMEMIworkAppUITests/Pods-YUMEMIworkApp-YUMEMIworkAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YUMEMIworkApp-YUMEMIworkAppUITests/Pods-YUMEMIworkApp-YUMEMIworkAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YUMEMIworkApp-YUMEMIworkAppUITests/Pods-YUMEMIworkApp-YUMEMIworkAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A505E539667406E6D59309CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YUMEMIworkAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B865C5E915C51A9CE0FFED69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YUMEMIworkApp-YUMEMIworkAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9201B57D44C495383F2CE96 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YUMEMIworkApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		42590DD823E9869300528E4D /* Sources */ = {
@@ -480,6 +629,7 @@
 		};
 		42590E0723E9869500528E4D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD3CE37967B72F91FBD99172 /* Pods-YUMEMIworkApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -498,6 +648,7 @@
 		};
 		42590E0823E9869500528E4D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 533D1FD04EE9094DDB6EEB4F /* Pods-YUMEMIworkApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -516,6 +667,7 @@
 		};
 		42590E0A23E9869500528E4D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8B8B0F5BE6047C8066F7B91 /* Pods-YUMEMIworkAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -538,6 +690,7 @@
 		};
 		42590E0B23E9869500528E4D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8E79C57955C5099195F8FC4 /* Pods-YUMEMIworkAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -560,6 +713,7 @@
 		};
 		42590E0D23E9869500528E4D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A2B76735F859ADD67C834D3 /* Pods-YUMEMIworkApp-YUMEMIworkAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -580,6 +734,7 @@
 		};
 		42590E0E23E9869500528E4D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5508E089F81F729EACF6CB56 /* Pods-YUMEMIworkApp-YUMEMIworkAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -640,7 +795,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		42590E1623E9970400528E4D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		42590E1623E9970400528E4D /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -651,9 +806,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		42590E1723E9970400528E4D /* Alamofire */ = {
+		42590E1723E9970400528E4D /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 42590E1623E9970400528E4D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 42590E1623E9970400528E4D /* RemoteSwiftPackageReference */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
