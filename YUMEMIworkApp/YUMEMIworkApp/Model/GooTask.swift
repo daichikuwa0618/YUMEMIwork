@@ -1,5 +1,5 @@
 //
-//  MainView.swift
+//  GooTask.swift
 //  YUMEMIworkApp
 //
 //  Created by Daichi Hayashi on 2020/02/04.
@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit
 
-class MainView: UIViewController {
-    
+struct GooTask: Codable {
+    let converted: String
+    let output_type: String
 }

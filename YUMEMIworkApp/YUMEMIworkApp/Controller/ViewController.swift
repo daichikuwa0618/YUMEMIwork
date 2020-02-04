@@ -14,10 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let mainViewController = MainViewController()
-        self.present(mainViewController, animated: false, completion: nil)
+        
     }
-
-
 }
 
