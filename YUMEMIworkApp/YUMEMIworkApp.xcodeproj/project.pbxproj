@@ -15,6 +15,7 @@
 		42590DEC23E9869400528E4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42590DEA23E9869400528E4D /* LaunchScreen.storyboard */; };
 		42590DF723E9869500528E4D /* YUMEMIworkAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590DF623E9869500528E4D /* YUMEMIworkAppTests.swift */; };
 		42590E0223E9869500528E4D /* YUMEMIworkAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E0123E9869500528E4D /* YUMEMIworkAppUITests.swift */; };
+		42590E1323E98B1B00528E4D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1223E98B1B00528E4D /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		42590DFD23E9869500528E4D /* YUMEMIworkAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YUMEMIworkAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42590E0123E9869500528E4D /* YUMEMIworkAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YUMEMIworkAppUITests.swift; sourceTree = "<group>"; };
 		42590E0323E9869500528E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42590E1223E98B1B00528E4D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		42590E1023E9887A00528E4D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				42590E1223E98B1B00528E4D /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42590DE423E9869300528E4D /* ViewController.swift in Sources */,
+				42590E1323E98B1B00528E4D /* MainView.swift in Sources */,
 				42590DE023E9869300528E4D /* AppDelegate.swift in Sources */,
 				42590DE223E9869300528E4D /* SceneDelegate.swift in Sources */,
 			);

@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let mainViewController = MainViewController()
+        self.present(mainViewController, animated: false, completion: nil)
     }
 
 
