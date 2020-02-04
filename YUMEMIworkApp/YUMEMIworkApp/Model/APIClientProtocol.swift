@@ -10,5 +10,5 @@ import Foundation
 
 protocol APIClientType {
 
-    func convert(_ japaneseString: String, completionHandler: @escaping (String) -> Void)
+    func convert(_ japaneseString: String, _ outputStyle: String, completionHandler: @escaping (String) -> Void)
 }

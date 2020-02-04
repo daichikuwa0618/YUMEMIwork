@@ -15,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="X4w-er-TIF">
-                                <rect key="frame" x="0.0" y="144" width="414" height="258"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="X4w-er-TIF">
+                                <rect key="frame" x="0.0" y="94" width="414" height="253"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XPI-me-Lod">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -28,16 +28,25 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xH5-hY-bDC">
+                                        <rect key="frame" x="0.0" y="114" width="414" height="32"/>
+                                        <segments>
+                                            <segment title="ひらがな"/>
+                                            <segment title="カタカナ"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="kanaSelectControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="J7b-7R-6Pq"/>
+                                        </connections>
+                                    </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvh-Qp-UfL">
-                                        <rect key="frame" x="0.0" y="139" width="414" height="30"/>
+                                        <rect key="frame" x="0.0" y="159" width="414" height="30"/>
                                         <state key="normal" title="変換！"/>
                                         <connections>
                                             <action selector="tapConvert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q86-E9-eOn"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-GL-PeY">
-                                        <rect key="frame" x="0.0" y="208" width="414" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="203" width="414" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -53,8 +62,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="X4w-er-TIF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Caf-gC-Zko"/>
-                            <constraint firstItem="X4w-er-TIF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="SuG-vk-P6F"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X4w-er-TIF" secondAttribute="trailing" id="c5t-Xc-IQT"/>
+                            <constraint firstItem="X4w-er-TIF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="SuG-vk-P6F"/>
                             <constraint firstItem="X4w-er-TIF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pkd-o5-Mx7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -62,6 +70,7 @@
                     <connections>
                         <outlet property="convertButton" destination="Nvh-Qp-UfL" id="l5J-oD-jFe"/>
                         <outlet property="inputTextView" destination="XPI-me-Lod" id="5eO-8H-cmN"/>
+                        <outlet property="kanaSelect" destination="xH5-hY-bDC" id="z0T-Qn-pil"/>
                         <outlet property="outputLabel" destination="kZz-GL-PeY" id="GYt-C4-dH2"/>
                     </connections>
                 </viewController>
