@@ -18,7 +18,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="X4w-er-TIF">
                                 <rect key="frame" x="0.0" y="144" width="414" height="258"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="変換したいテキストを入力" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XPI-me-Lod">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XPI-me-Lod">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                         <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -31,6 +31,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvh-Qp-UfL">
                                         <rect key="frame" x="0.0" y="139" width="414" height="30"/>
                                         <state key="normal" title="変換！"/>
+                                        <connections>
+                                            <action selector="tapConvert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q86-E9-eOn"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-GL-PeY">
                                         <rect key="frame" x="0.0" y="208" width="414" height="50"/>
@@ -56,6 +59,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="convertButton" destination="Nvh-Qp-UfL" id="l5J-oD-jFe"/>
+                        <outlet property="inputTextView" destination="XPI-me-Lod" id="5eO-8H-cmN"/>
+                        <outlet property="outputLabel" destination="kZz-GL-PeY" id="GYt-C4-dH2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
