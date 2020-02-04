@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,9 @@
 		42590E0223E9869500528E4D /* YUMEMIworkAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E0123E9869500528E4D /* YUMEMIworkAppUITests.swift */; };
 		42590E1323E98B1B00528E4D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1223E98B1B00528E4D /* MainView.swift */; };
 		42590E1523E9966B00528E4D /* GooTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1423E9966B00528E4D /* GooTask.swift */; };
+		42590E1823E9970400528E4D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 42590E1723E9970400528E4D /* Alamofire */; };
+		42590E1A23E9972600528E4D /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1923E9972600528E4D /* APIClientProtocol.swift */; };
+		42590E1C23E9976600528E4D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1B23E9976600528E4D /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,8 @@
 		42590E0323E9869500528E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42590E1223E98B1B00528E4D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		42590E1423E9966B00528E4D /* GooTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooTask.swift; sourceTree = "<group>"; };
+		42590E1923E9972600528E4D /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
+		42590E1B23E9976600528E4D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42590E1823E9970400528E4D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				42590E1423E9966B00528E4D /* GooTask.swift */,
+				42590E1923E9972600528E4D /* APIClientProtocol.swift */,
+				42590E1B23E9976600528E4D /* APIClient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +182,9 @@
 			dependencies = (
 			);
 			name = YUMEMIworkApp;
+			packageProductDependencies = (
+				42590E1723E9970400528E4D /* Alamofire */,
+			);
 			productName = YUMEMIworkApp;
 			productReference = 42590DDC23E9869300528E4D /* YUMEMIworkApp.app */;
 			productType = "com.apple.product-type.application";
@@ -246,6 +257,9 @@
 				Base,
 			);
 			mainGroup = 42590DD323E9869300528E4D;
+			packageReferences = (
+				42590E1623E9970400528E4D /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 42590DDD23E9869300528E4D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -290,10 +304,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				42590DE423E9869300528E4D /* ViewController.swift in Sources */,
+				42590E1C23E9976600528E4D /* APIClient.swift in Sources */,
 				42590E1323E98B1B00528E4D /* MainView.swift in Sources */,
 				42590E1523E9966B00528E4D /* GooTask.swift in Sources */,
 				42590DE023E9869300528E4D /* AppDelegate.swift in Sources */,
 				42590DE223E9869300528E4D /* SceneDelegate.swift in Sources */,
+				42590E1A23E9972600528E4D /* APIClientProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +638,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		42590E1623E9970400528E4D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		42590E1723E9970400528E4D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42590E1623E9970400528E4D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 42590DD423E9869300528E4D /* Project object */;
 }
