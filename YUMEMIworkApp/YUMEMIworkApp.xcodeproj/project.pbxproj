@@ -99,9 +99,11 @@
 		42590DDE23E9869300528E4D /* YUMEMIworkApp */ = {
 			isa = PBXGroup;
 			children = (
+				42590E1123E9888300528E4D /* Model */,
+				42590E1023E9887A00528E4D /* View */,
+				42590E0F23E9886400528E4D /* Controller */,
 				42590DDF23E9869300528E4D /* AppDelegate.swift */,
 				42590DE123E9869300528E4D /* SceneDelegate.swift */,
-				42590DE323E9869300528E4D /* ViewController.swift */,
 				42590DE523E9869300528E4D /* Main.storyboard */,
 				42590DE823E9869400528E4D /* Assets.xcassets */,
 				42590DEA23E9869400528E4D /* LaunchScreen.storyboard */,
@@ -126,6 +128,28 @@
 				42590E0323E9869500528E4D /* Info.plist */,
 			);
 			path = YUMEMIworkAppUITests;
+			sourceTree = "<group>";
+		};
+		42590E0F23E9886400528E4D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42590DE323E9869300528E4D /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		42590E1023E9887A00528E4D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42590E1123E9888300528E4D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
