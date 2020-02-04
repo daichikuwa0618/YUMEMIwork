@@ -14,7 +14,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
+        APIClient().convert("林大地") { text in
+            print(text)
+        }
     }
 }
 
