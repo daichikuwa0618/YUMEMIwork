@@ -9,12 +9,13 @@
 import UIKit
 import UITextView_Placeholder
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationBarDelegate {
     
     @IBOutlet weak var inputTextView: UITextView!
     @IBOutlet weak var convertButton: UIButton!
-    @IBOutlet weak var outputLabel: UILabel!
     @IBOutlet weak var kanaSelect: UISegmentedControl!
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var outputTextView: UITextView!
     
     private var convertOutputStyle: String = "hiragana"
     
@@ -22,7 +23,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        inputTextView.placeholder = "変換したいテキストを入力してください"
+        navigationBar.delegate = self
+        
+        inputTextView.placeholder = "ここに読みがなを知りたいテキストを入力してください"
+        outputTextView.placeholder = "読みがなが出力されます"
+        
+        inputTextView.layer.cornerRadius = 7
+        outputTextView.layer.cornerRadius = 7
     }
     
     // 変換ボタンが押されたときの処理
@@ -30,13 +37,14 @@ class ViewController: UIViewController {
         
         let japaneseSentence: String = inputTextView.text ?? ""
         APIClient().convert(japaneseSentence, convertOutputStyle) { text in
-            self.outputLabel.text = text
-            self.outputLabel.textColor = UIColor.label
+            self.outputTextView.text = text
+            self.outputTextView.textColor = UIColor.label
         }
         // キーボードを閉じる
         inputTextView.endEditing(true)
     }
     
+    // SegmentControl の処理 (ひらがな，カタカナ切り替え)
     @IBAction func kanaSelectControl(_ sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex {
@@ -54,10 +62,15 @@ class ViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    // ラベルがタップされたときの処理
-    @IBAction func tapLabel(_ sender: Any) {
-        UIPasteboard.general.string = outputLabel.text
-        print("clipboard copied: \(UIPasteboard.general.string!)")
+    // 出力がタップされたときの処理
+    @IBAction func tapOutput(_ sender: Any) {
+        UIPasteboard.general.string = outputTextView.text
+        print("clipboard: \(UIPasteboard.general.string!)")
+    }
+    
+    
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
     }
 }
 

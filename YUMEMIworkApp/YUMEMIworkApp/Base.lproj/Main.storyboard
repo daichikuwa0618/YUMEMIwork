@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XPI-me-Lod">
-                                <rect key="frame" x="20" y="94" width="374" height="100"/>
+                                <rect key="frame" x="20" y="108" width="374" height="100"/>
                                 <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="ch4-4B-95x"/>
@@ -25,64 +25,85 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xH5-hY-bDC">
-                                <rect key="frame" x="20" y="194" width="374" height="32"/>
-                                <segments>
-                                    <segment title="ひらがな"/>
-                                    <segment title="カタカナ"/>
-                                </segments>
-                                <connections>
-                                    <action selector="kanaSelectControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="J7b-7R-6Pq"/>
-                                </connections>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvh-Qp-UfL">
-                                <rect key="frame" x="184" y="245" width="46" height="30"/>
-                                <state key="normal" title="変換！"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvh-Qp-UfL" customClass="ConvertButton" customModule="YUMEMIworkApp" customModuleProvider="target">
+                                <rect key="frame" x="100" y="228" width="214" height="40"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cUT-DS-hAc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="変換">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="tapConvert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q86-E9-eOn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タップしてコピー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQt-zS-hz1">
-                                <rect key="frame" x="20" y="285" width="374" height="17"/>
+                                <rect key="frame" x="20" y="278" width="374" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="変換された文字が出力されます" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-GL-PeY">
-                                <rect key="frame" x="20" y="307" width="374" height="100"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbi-JM-qc5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem id="UpQ-UQ-yEd">
+                                        <nil key="title"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="xH5-hY-bDC">
+                                            <rect key="frame" x="21.5" y="6" width="371" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="ひらがな"/>
+                                                <segment title="カタカナ"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="kanaSelectControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="J7b-7R-6Pq"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbX-0m-cN5">
+                                <rect key="frame" x="20" y="300" width="374" height="100"/>
                                 <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="atm-Q6-TOr"/>
+                                    <constraint firstAttribute="height" constant="100" id="bRd-wE-n14"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="H5z-MM-mG8" appends="YES" id="vOT-Dk-wpp"/>
+                                    <outletCollection property="gestureRecognizers" destination="AEf-bj-WLU" appends="YES" id="GCl-KA-ZXF"/>
                                 </connections>
-                            </label>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xH5-hY-bDC" secondAttribute="trailing" constant="20" id="1b0-qs-WsX"/>
-                            <constraint firstItem="kZz-GL-PeY" firstAttribute="top" secondItem="XQt-zS-hz1" secondAttribute="bottom" constant="5" id="1qe-9m-b2p"/>
+                            <constraint firstItem="Dbi-JM-qc5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1xI-fV-y9x"/>
                             <constraint firstItem="XQt-zS-hz1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="52e-Gq-XNj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kZz-GL-PeY" secondAttribute="trailing" constant="20" id="CCT-QL-DRB"/>
-                            <constraint firstItem="kZz-GL-PeY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="D0G-gB-cxB"/>
+                            <constraint firstItem="Dbi-JM-qc5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9S8-2o-fkv"/>
+                            <constraint firstItem="Nvh-Qp-UfL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="I6u-lT-ilu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XQt-zS-hz1" secondAttribute="trailing" constant="20" id="I9v-D3-xFG"/>
                             <constraint firstItem="XQt-zS-hz1" firstAttribute="top" secondItem="Nvh-Qp-UfL" secondAttribute="bottom" constant="10" id="IMV-NW-ZTe"/>
-                            <constraint firstItem="Nvh-Qp-UfL" firstAttribute="top" secondItem="xH5-hY-bDC" secondAttribute="bottom" constant="20" id="QHZ-aN-Cnz"/>
+                            <constraint firstItem="MbX-0m-cN5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MgU-91-bTg"/>
+                            <constraint firstItem="MbX-0m-cN5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="N8E-Wk-D6R"/>
                             <constraint firstItem="Nvh-Qp-UfL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RkJ-HZ-Eqf"/>
                             <constraint firstItem="XPI-me-Lod" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Tm9-bI-3SO"/>
-                            <constraint firstItem="XPI-me-Lod" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="XYU-j1-O6J"/>
-                            <constraint firstItem="xH5-hY-bDC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bXg-Gq-dcL"/>
-                            <constraint firstItem="kZz-GL-PeY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hcE-tD-Wnq"/>
+                            <constraint firstItem="Dbi-JM-qc5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bjh-Ud-v77"/>
+                            <constraint firstItem="MbX-0m-cN5" firstAttribute="top" secondItem="XQt-zS-hz1" secondAttribute="bottom" constant="5" id="bqC-Nd-c8L"/>
+                            <constraint firstItem="Dbi-JM-qc5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d14-bU-UPT"/>
                             <constraint firstItem="XPI-me-Lod" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jgZ-X7-zWf"/>
-                            <constraint firstItem="xH5-hY-bDC" firstAttribute="top" secondItem="XPI-me-Lod" secondAttribute="bottom" id="qQW-0i-h46"/>
+                            <constraint firstItem="XPI-me-Lod" firstAttribute="top" secondItem="Dbi-JM-qc5" secondAttribute="bottom" constant="20" id="qmk-Md-raE"/>
+                            <constraint firstItem="Nvh-Qp-UfL" firstAttribute="top" secondItem="XPI-me-Lod" secondAttribute="bottom" constant="20" id="vj0-M1-kad"/>
                             <constraint firstItem="XQt-zS-hz1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vsw-mu-4tT"/>
-                            <constraint firstItem="xH5-hY-bDC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xMh-uW-GhT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -90,13 +111,14 @@
                         <outlet property="convertButton" destination="Nvh-Qp-UfL" id="l5J-oD-jFe"/>
                         <outlet property="inputTextView" destination="XPI-me-Lod" id="5eO-8H-cmN"/>
                         <outlet property="kanaSelect" destination="xH5-hY-bDC" id="z0T-Qn-pil"/>
-                        <outlet property="outputLabel" destination="kZz-GL-PeY" id="GYt-C4-dH2"/>
+                        <outlet property="navigationBar" destination="Dbi-JM-qc5" id="xS3-9x-us4"/>
+                        <outlet property="outputTextView" destination="MbX-0m-cN5" id="gKr-NE-bT3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="H5z-MM-mG8">
+                <tapGestureRecognizer id="AEf-bj-WLU">
                     <connections>
-                        <action selector="tapLabel:" destination="BYZ-38-t0r" id="DqW-Lc-7M5"/>
+                        <action selector="tapOutput:" destination="BYZ-38-t0r" id="CkP-1u-BhD"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
