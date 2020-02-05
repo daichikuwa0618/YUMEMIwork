@@ -38,6 +38,10 @@ class ViewController: UIViewController, UINavigationBarDelegate {
         convertButton.layer.shadowColor = UIColor.black.cgColor
         convertButton.layer.shadowRadius = 7
         convertButton.layer.shadowOffset = CGSize(width: 1, height: 1)
+        
+        
+        // HUD アニメーション
+        HUD.dimsBackground = false // アニメーション時の暗転をなくす
     }
     
     // 変換ボタンが押されたときの処理
@@ -74,7 +78,7 @@ class ViewController: UIViewController, UINavigationBarDelegate {
     @IBAction func tapOutput(_ sender: Any) {
         UIPasteboard.general.string = outputTextView.text
         print("clipboard: \(UIPasteboard.general.string!)")
-        HUD.show(.success)
+        HUD.flash(.success, delay: 0.3)
     }
     
     // ナビゲーションバーとステータスバーの境目をなくす
