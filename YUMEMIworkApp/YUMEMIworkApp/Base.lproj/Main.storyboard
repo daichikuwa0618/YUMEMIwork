@@ -26,9 +26,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvh-Qp-UfL" customClass="ConvertButton" customModule="YUMEMIworkApp" customModuleProvider="target">
-                                <rect key="frame" x="100" y="228" width="214" height="40"/>
+                                <rect key="frame" x="147" y="228" width="120" height="40"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="2GQ-O6-FRp"/>
                                     <constraint firstAttribute="height" constant="40" id="cUT-DS-hAc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -44,7 +45,7 @@
                                     <action selector="tapConvert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q86-E9-eOn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タップしてコピー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQt-zS-hz1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="読みがな (タップでコピー)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQt-zS-hz1">
                                 <rect key="frame" x="20" y="278" width="374" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,10 +54,9 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbi-JM-qc5">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem id="UpQ-UQ-yEd">
-                                        <nil key="title"/>
+                                    <navigationItem title="読みがな変換" id="UpQ-UQ-yEd">
                                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="xH5-hY-bDC">
-                                            <rect key="frame" x="21.5" y="6" width="371" height="32"/>
+                                            <rect key="frame" x="55" y="6" width="304" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="ひらがな"/>
@@ -90,7 +90,6 @@
                             <constraint firstItem="Dbi-JM-qc5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1xI-fV-y9x"/>
                             <constraint firstItem="XQt-zS-hz1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="52e-Gq-XNj"/>
                             <constraint firstItem="Dbi-JM-qc5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9S8-2o-fkv"/>
-                            <constraint firstItem="Nvh-Qp-UfL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="I6u-lT-ilu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XQt-zS-hz1" secondAttribute="trailing" constant="20" id="I9v-D3-xFG"/>
                             <constraint firstItem="XQt-zS-hz1" firstAttribute="top" secondItem="Nvh-Qp-UfL" secondAttribute="bottom" constant="10" id="IMV-NW-ZTe"/>
                             <constraint firstItem="MbX-0m-cN5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MgU-91-bTg"/>

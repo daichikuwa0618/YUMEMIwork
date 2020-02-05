@@ -25,11 +25,11 @@ class ViewController: UIViewController, UINavigationBarDelegate {
         
         navigationBar.delegate = self
         
-        inputTextView.placeholder = "ここに読みがなを知りたいテキストを入力してください"
+        inputTextView.placeholder = "ここに変換するテキストを入力してください"
         outputTextView.placeholder = "読みがなが出力されます"
         
-        inputTextView.layer.cornerRadius = 7
-        outputTextView.layer.cornerRadius = 7
+        inputTextView.layer.cornerRadius = 5
+        outputTextView.layer.cornerRadius = 5
     }
     
     // 変換ボタンが押されたときの処理
