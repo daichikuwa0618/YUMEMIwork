@@ -29,6 +29,8 @@ class APIClient: APIClientType {
                 completionHandler(task.converted)
             } catch {
                 print(error)
+                print(type(of: error)) // -> DecodingError
+                completionHandler("error")
             }
         }
     }

@@ -47,10 +47,17 @@ class ViewController: UIViewController, UINavigationBarDelegate {
     // 変換ボタンが押されたときの処理
     @IBAction func tapConvert(_ sender: Any) {
         
+        HUD.show(.progress)
         let japaneseSentence: String = inputTextView.text ?? ""
         APIClient().convert(japaneseSentence, convertOutputStyle) { text in
-            self.outputTextView.text = text
-            self.outputTextView.textColor = UIColor.label
+            if text == "error" {
+                HUD.hide() // dismiss progress anim.
+                HUD.flash(.error, delay: 0.5)
+            } else {
+                self.outputTextView.text = text
+                self.outputTextView.textColor = UIColor.label
+                HUD.hide() // hismiss progress anim.
+            }
         }
         // キーボードを閉じる
         inputTextView.endEditing(true)
