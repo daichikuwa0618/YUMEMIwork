@@ -16,17 +16,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XPI-me-Lod">
-                                <rect key="frame" x="0.0" y="94" width="414" height="100"/>
+                                <rect key="frame" x="20" y="94" width="374" height="100"/>
                                 <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="ch4-4B-95x"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xH5-hY-bDC">
-                                <rect key="frame" x="0.0" y="194" width="414" height="32"/>
+                                <rect key="frame" x="20" y="194" width="374" height="32"/>
                                 <segments>
                                     <segment title="ひらがな"/>
                                     <segment title="カタカナ"/>
@@ -42,29 +42,47 @@
                                     <action selector="tapConvert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q86-E9-eOn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-GL-PeY">
-                                <rect key="frame" x="20" y="295" width="374" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タップしてコピー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQt-zS-hz1">
+                                <rect key="frame" x="20" y="285" width="374" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="変換された文字が出力されます" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-GL-PeY">
+                                <rect key="frame" x="20" y="307" width="374" height="100"/>
+                                <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="atm-Q6-TOr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="H5z-MM-mG8" appends="YES" id="vOT-Dk-wpp"/>
+                                </connections>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xH5-hY-bDC" secondAttribute="trailing" id="1b0-qs-WsX"/>
-                            <constraint firstItem="kZz-GL-PeY" firstAttribute="top" secondItem="Nvh-Qp-UfL" secondAttribute="bottom" constant="20" id="1qe-9m-b2p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xH5-hY-bDC" secondAttribute="trailing" constant="20" id="1b0-qs-WsX"/>
+                            <constraint firstItem="kZz-GL-PeY" firstAttribute="top" secondItem="XQt-zS-hz1" secondAttribute="bottom" constant="5" id="1qe-9m-b2p"/>
+                            <constraint firstItem="XQt-zS-hz1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="52e-Gq-XNj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kZz-GL-PeY" secondAttribute="trailing" constant="20" id="CCT-QL-DRB"/>
                             <constraint firstItem="kZz-GL-PeY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="D0G-gB-cxB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XQt-zS-hz1" secondAttribute="trailing" constant="20" id="I9v-D3-xFG"/>
+                            <constraint firstItem="XQt-zS-hz1" firstAttribute="top" secondItem="Nvh-Qp-UfL" secondAttribute="bottom" constant="10" id="IMV-NW-ZTe"/>
                             <constraint firstItem="Nvh-Qp-UfL" firstAttribute="top" secondItem="xH5-hY-bDC" secondAttribute="bottom" constant="20" id="QHZ-aN-Cnz"/>
                             <constraint firstItem="Nvh-Qp-UfL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RkJ-HZ-Eqf"/>
-                            <constraint firstItem="XPI-me-Lod" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tm9-bI-3SO"/>
+                            <constraint firstItem="XPI-me-Lod" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Tm9-bI-3SO"/>
                             <constraint firstItem="XPI-me-Lod" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="XYU-j1-O6J"/>
-                            <constraint firstItem="XPI-me-Lod" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="a9d-dq-3n4"/>
                             <constraint firstItem="xH5-hY-bDC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bXg-Gq-dcL"/>
                             <constraint firstItem="kZz-GL-PeY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hcE-tD-Wnq"/>
                             <constraint firstItem="XPI-me-Lod" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jgZ-X7-zWf"/>
                             <constraint firstItem="xH5-hY-bDC" firstAttribute="top" secondItem="XPI-me-Lod" secondAttribute="bottom" id="qQW-0i-h46"/>
-                            <constraint firstItem="xH5-hY-bDC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xMh-uW-GhT"/>
+                            <constraint firstItem="XQt-zS-hz1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vsw-mu-4tT"/>
+                            <constraint firstItem="xH5-hY-bDC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xMh-uW-GhT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -76,6 +94,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="H5z-MM-mG8">
+                    <connections>
+                        <action selector="tapLabel:" destination="BYZ-38-t0r" id="DqW-Lc-7M5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </scene>

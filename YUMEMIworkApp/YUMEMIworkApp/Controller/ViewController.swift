@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         let japaneseSentence: String = inputTextView.text ?? ""
         APIClient().convert(japaneseSentence, convertOutputStyle) { text in
             self.outputLabel.text = text
+            self.outputLabel.textColor = UIColor.label
         }
         // キーボードを閉じる
         inputTextView.endEditing(true)
@@ -51,6 +52,12 @@ class ViewController: UIViewController {
     // TextView とキーボード以外をタップしたらキーボードを閉じる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    // ラベルがタップされたときの処理
+    @IBAction func tapLabel(_ sender: Any) {
+        UIPasteboard.general.string = outputLabel.text
+        print("clipboard copied: \(UIPasteboard.general.string!)")
     }
 }
 
