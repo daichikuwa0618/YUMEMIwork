@@ -30,6 +30,13 @@ class ViewController: UIViewController, UINavigationBarDelegate {
         
         inputTextView.layer.cornerRadius = 5
         outputTextView.layer.cornerRadius = 5
+        
+        inputTextView.tintColor = UIColor(red: 187/255, green: 135/255, blue: 252/255, alpha: 1.0)
+        
+        convertButton.layer.shadowOpacity = 0.4
+        convertButton.layer.shadowColor = UIColor.black.cgColor
+        convertButton.layer.shadowRadius = 7
+        convertButton.layer.shadowOffset = CGSize(width: 1, height: 1)
     }
     
     // 変換ボタンが押されたときの処理
