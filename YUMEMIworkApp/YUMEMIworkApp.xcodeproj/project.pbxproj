@@ -11,8 +11,7 @@
 		39283F80C1D4E8C927485A4A /* Pods_YUMEMIworkAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38046D1AA46C0EC31C8E4985 /* Pods_YUMEMIworkAppTests.framework */; };
 		42590DE023E9869300528E4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590DDF23E9869300528E4D /* AppDelegate.swift */; };
 		42590DE223E9869300528E4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590DE123E9869300528E4D /* SceneDelegate.swift */; };
-		42590DE423E9869300528E4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590DE323E9869300528E4D /* ViewController.swift */; };
-		42590DE723E9869300528E4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42590DE523E9869300528E4D /* Main.storyboard */; };
+		42590DE423E9869300528E4D /* ConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590DE323E9869300528E4D /* ConvertViewController.swift */; };
 		42590DE923E9869400528E4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42590DE823E9869400528E4D /* Assets.xcassets */; };
 		42590DEC23E9869400528E4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42590DEA23E9869400528E4D /* LaunchScreen.storyboard */; };
 		42590DF723E9869500528E4D /* YUMEMIworkAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590DF623E9869500528E4D /* YUMEMIworkAppTests.swift */; };
@@ -24,6 +23,7 @@
 		42590E1C23E9976600528E4D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1B23E9976600528E4D /* APIClient.swift */; };
 		42FDF9A223EAD778000CBCA9 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FDF9A123EAD778000CBCA9 /* PKHUD.framework */; };
 		42FDF9A323EAD778000CBCA9 /* PKHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FDF9A123EAD778000CBCA9 /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42FDF9A723EAFE60000CBCA9 /* ConvertViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FDF9A623EAFE60000CBCA9 /* ConvertViewController.storyboard */; };
 		B3E021F0182A770D8C38EDF1 /* Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D8DC892323A9C65A4BB5A0 /* Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +63,7 @@
 		42590DDC23E9869300528E4D /* YUMEMIworkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUMEMIworkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42590DDF23E9869300528E4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42590DE123E9869300528E4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		42590DE323E9869300528E4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		42590DE623E9869300528E4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		42590DE323E9869300528E4D /* ConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewController.swift; sourceTree = "<group>"; };
 		42590DE823E9869400528E4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42590DEB23E9869400528E4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42590DED23E9869400528E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		42590E1923E9972600528E4D /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
 		42590E1B23E9976600528E4D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		42FDF9A123EAD778000CBCA9 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
+		42FDF9A623EAFE60000CBCA9 /* ConvertViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConvertViewController.storyboard; sourceTree = "<group>"; };
 		533D1FD04EE9094DDB6EEB4F /* Pods-YUMEMIworkApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUMEMIworkApp.release.xcconfig"; path = "Target Support Files/Pods-YUMEMIworkApp/Pods-YUMEMIworkApp.release.xcconfig"; sourceTree = "<group>"; };
 		5508E089F81F729EACF6CB56 /* Pods-YUMEMIworkApp-YUMEMIworkAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUMEMIworkApp-YUMEMIworkAppUITests.release.xcconfig"; path = "Target Support Files/Pods-YUMEMIworkApp-YUMEMIworkAppUITests/Pods-YUMEMIworkApp-YUMEMIworkAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		64D8DC892323A9C65A4BB5A0 /* Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +149,7 @@
 				42590E0F23E9886400528E4D /* Controller */,
 				42590DDF23E9869300528E4D /* AppDelegate.swift */,
 				42590DE123E9869300528E4D /* SceneDelegate.swift */,
-				42590DE523E9869300528E4D /* Main.storyboard */,
+				42FDF9A623EAFE60000CBCA9 /* ConvertViewController.storyboard */,
 				42590DE823E9869400528E4D /* Assets.xcassets */,
 				42590DEA23E9869400528E4D /* LaunchScreen.storyboard */,
 				42590DED23E9869400528E4D /* Info.plist */,
@@ -178,7 +178,7 @@
 		42590E0F23E9886400528E4D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				42590DE323E9869300528E4D /* ViewController.swift */,
+				42590DE323E9869300528E4D /* ConvertViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -344,7 +344,7 @@
 			files = (
 				42590DEC23E9869400528E4D /* LaunchScreen.storyboard in Resources */,
 				42590DE923E9869400528E4D /* Assets.xcassets in Resources */,
-				42590DE723E9869300528E4D /* Main.storyboard in Resources */,
+				42FDF9A723EAFE60000CBCA9 /* ConvertViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42590DE423E9869300528E4D /* ViewController.swift in Sources */,
+				42590DE423E9869300528E4D /* ConvertViewController.swift in Sources */,
 				42590E1C23E9976600528E4D /* APIClient.swift in Sources */,
 				42590E1323E98B1B00528E4D /* MainView.swift in Sources */,
 				42590E1523E9966B00528E4D /* GooTask.swift in Sources */,
@@ -532,14 +532,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		42590DE523E9869300528E4D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				42590DE623E9869300528E4D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		42590DEA23E9869400528E4D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -10,7 +10,7 @@ import UIKit
 import UITextView_Placeholder
 import PKHUD
 
-class ViewController: UIViewController, UINavigationBarDelegate {
+class ConvertViewController: UIViewController, UINavigationBarDelegate {
     
     @IBOutlet weak var inputTextView: UITextView!
     @IBOutlet weak var convertButton: UIButton!
@@ -29,32 +29,28 @@ class ViewController: UIViewController, UINavigationBarDelegate {
         inputTextView.placeholder = "ここに変換するテキストを入力してください"
         outputTextView.placeholder = "読みがなが出力されます"
         
-        inputTextView.layer.cornerRadius = 5
-        outputTextView.layer.cornerRadius = 5
-        
         inputTextView.tintColor = UIColor(red: 187/255, green: 135/255, blue: 252/255, alpha: 1.0)
         
         convertButton.layer.shadowOpacity = 0.4
         convertButton.layer.shadowColor = UIColor.black.cgColor
         convertButton.layer.shadowRadius = 7
         convertButton.layer.shadowOffset = CGSize(width: 1, height: 1)
-        
-        
+
         // HUD アニメーション
         HUD.dimsBackground = false // アニメーション時の暗転をなくす
     }
-    
+
     // 変換ボタンが押されたときの処理
     @IBAction func tapConvert(_ sender: Any) {
-        
+
         HUD.show(.progress)
-        let japaneseSentence: String = inputTextView.text ?? ""
-        APIClient().convert(japaneseSentence, convertOutputStyle) { text in
-            if text == "error" {
+        let japaneseSentence = inputTextView.text ?? ""
+        APIClient().convert(japaneseSentence, convertOutputStyle) { result in
+            if result == "error" {
                 HUD.hide() // dismiss progress anim.
                 HUD.flash(.error, delay: 0.5)
             } else {
-                self.outputTextView.text = text
+                self.outputTextView.text = result
                 self.outputTextView.textColor = UIColor.label
                 HUD.hide() // hismiss progress anim.
             }
@@ -62,7 +58,7 @@ class ViewController: UIViewController, UINavigationBarDelegate {
         // キーボードを閉じる
         inputTextView.endEditing(true)
     }
-    
+
     // SegmentControl の処理 (ひらがな，カタカナ切り替え)
     @IBAction func kanaSelectControl(_ sender: UISegmentedControl) {
         
