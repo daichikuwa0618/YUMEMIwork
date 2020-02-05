@@ -8,6 +8,7 @@
 
 import UIKit
 import UITextView_Placeholder
+import PKHUD
 
 class ViewController: UIViewController, UINavigationBarDelegate {
     
@@ -69,13 +70,14 @@ class ViewController: UIViewController, UINavigationBarDelegate {
         self.view.endEditing(true)
     }
     
-    // 出力がタップされたときの処理
+    // 出力がタップされたときの処理 (コピー)
     @IBAction func tapOutput(_ sender: Any) {
         UIPasteboard.general.string = outputTextView.text
         print("clipboard: \(UIPasteboard.general.string!)")
+        HUD.show(.success)
     }
     
-    
+    // ナビゲーションバーとステータスバーの境目をなくす
     func position(for bar: UIBarPositioning) -> UIBarPosition {
         return .topAttached
     }
