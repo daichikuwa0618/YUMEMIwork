@@ -8,6 +8,7 @@
 
 import UIKit
 import UITextView_Placeholder
+import PKHUD
 
 class ViewController: UIViewController, UINavigationBarDelegate {
     
@@ -37,15 +38,26 @@ class ViewController: UIViewController, UINavigationBarDelegate {
         convertButton.layer.shadowColor = UIColor.black.cgColor
         convertButton.layer.shadowRadius = 7
         convertButton.layer.shadowOffset = CGSize(width: 1, height: 1)
+        
+        
+        // HUD アニメーション
+        HUD.dimsBackground = false // アニメーション時の暗転をなくす
     }
     
     // 変換ボタンが押されたときの処理
     @IBAction func tapConvert(_ sender: Any) {
         
+        HUD.show(.progress)
         let japaneseSentence: String = inputTextView.text ?? ""
         APIClient().convert(japaneseSentence, convertOutputStyle) { text in
-            self.outputTextView.text = text
-            self.outputTextView.textColor = UIColor.label
+            if text == "error" {
+                HUD.hide() // dismiss progress anim.
+                HUD.flash(.error, delay: 0.5)
+            } else {
+                self.outputTextView.text = text
+                self.outputTextView.textColor = UIColor.label
+                HUD.hide() // hismiss progress anim.
+            }
         }
         // キーボードを閉じる
         inputTextView.endEditing(true)
@@ -69,13 +81,14 @@ class ViewController: UIViewController, UINavigationBarDelegate {
         self.view.endEditing(true)
     }
     
-    // 出力がタップされたときの処理
+    // 出力がタップされたときの処理 (コピー)
     @IBAction func tapOutput(_ sender: Any) {
         UIPasteboard.general.string = outputTextView.text
         print("clipboard: \(UIPasteboard.general.string!)")
+        HUD.flash(.success, delay: 0.3)
     }
     
-    
+    // ナビゲーションバーとステータスバーの境目をなくす
     func position(for bar: UIBarPositioning) -> UIBarPosition {
         return .topAttached
     }
