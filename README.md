@@ -12,9 +12,9 @@
   - 変換には goo が提供する[ひらがな化API](https://labs.goo.ne.jp/api/jp/hiragana-translation/)を使用．
 
 ## スクリーンショット
-![light-mode](./demo/v1-0/light.png)
+<img src="./demo/v1-0/light.png" width="320px">
 
-![dark-mode](./demo/v1-0/dark.png)
+<img src="./demo/v1-0/dark.png" width="320px">
 
 ## 自分なりに追加した機能
 - 出力の UITextView をタップすることで出力されたテキストをクリップボードにコピーする
