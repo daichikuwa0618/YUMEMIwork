@@ -29,7 +29,7 @@ class ConvertViewController: UIViewController, UINavigationBarDelegate {
         inputTextView.placeholder = "ここに変換するテキストを入力してください"
         outputTextView.placeholder = "読みがなが出力されます"
         
-        inputTextView.tintColor = UIColor(red: 187/255, green: 135/255, blue: 252/255, alpha: 1.0)
+        inputTextView.tintColor = UIColor.BlogBlue()
         
         convertButton.layer.shadowOpacity = 0.4
         convertButton.layer.shadowColor = UIColor.black.cgColor

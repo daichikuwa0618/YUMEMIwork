@@ -22,6 +22,7 @@
 		42590E1A23E9972600528E4D /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1923E9972600528E4D /* APIClientProtocol.swift */; };
 		42590E1C23E9976600528E4D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1B23E9976600528E4D /* APIClient.swift */; };
 		425DBC4623EBF40400FFDD1B /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DBC4523EBF40400FFDD1B /* GradientButton.swift */; };
+		425DBC4823EBF62F00FFDD1B /* myDefColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DBC4723EBF62F00FFDD1B /* myDefColor.swift */; };
 		42FDF9A223EAD778000CBCA9 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FDF9A123EAD778000CBCA9 /* PKHUD.framework */; };
 		42FDF9A323EAD778000CBCA9 /* PKHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FDF9A123EAD778000CBCA9 /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42FDF9A723EAFE60000CBCA9 /* ConvertViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FDF9A623EAFE60000CBCA9 /* ConvertViewController.storyboard */; };
@@ -79,6 +80,7 @@
 		42590E1923E9972600528E4D /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
 		42590E1B23E9976600528E4D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		425DBC4523EBF40400FFDD1B /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
+		425DBC4723EBF62F00FFDD1B /* myDefColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myDefColor.swift; sourceTree = "<group>"; };
 		42FDF9A123EAD778000CBCA9 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		42FDF9A623EAFE60000CBCA9 /* ConvertViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConvertViewController.storyboard; sourceTree = "<group>"; };
 		533D1FD04EE9094DDB6EEB4F /* Pods-YUMEMIworkApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUMEMIworkApp.release.xcconfig"; path = "Target Support Files/Pods-YUMEMIworkApp/Pods-YUMEMIworkApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			children = (
 				42590E1223E98B1B00528E4D /* MainView.swift */,
 				425DBC4523EBF40400FFDD1B /* GradientButton.swift */,
+				425DBC4723EBF62F00FFDD1B /* myDefColor.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				42590DE423E9869300528E4D /* ConvertViewController.swift in Sources */,
 				425DBC4623EBF40400FFDD1B /* GradientButton.swift in Sources */,
 				42590E1C23E9976600528E4D /* APIClient.swift in Sources */,
+				425DBC4823EBF62F00FFDD1B /* myDefColor.swift in Sources */,
 				42590E1323E98B1B00528E4D /* MainView.swift in Sources */,
 				42590E1523E9966B00528E4D /* GooTask.swift in Sources */,
 				42590DE023E9869300528E4D /* AppDelegate.swift in Sources */,
