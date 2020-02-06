@@ -11,7 +11,7 @@ import Alamofire
 
 class APIClient: APIClientType {
     
-    func convert(_ japaneseString: String, _ outputStyle: String, completionHandler: @escaping (String) -> Void) {
+    func convert(_ japaneseString: String, _ outputStyle: String, completionHandler: @escaping (APIClientResult) -> Void) {
 
         // API URL
         let url = "https://labs.goo.ne.jp/api/hiragana"

@@ -8,7 +8,9 @@
 
 import Foundation
 
+typealias APIClientResult = String
+
 protocol APIClientType {
 
-    func convert(_ japaneseString: String, _ outputStyle: String, completionHandler: @escaping (String) -> Void)
+    func convert(_ japaneseString: String, _ outputStyle: String, completionHandler: @escaping (APIClientResult) -> Void)
 }

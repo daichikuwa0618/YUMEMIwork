@@ -42,21 +42,31 @@ class ConvertViewController: UIViewController, UINavigationBarDelegate {
 
     // 変換ボタンが押されたときの処理
     @IBAction func tapConvert(_ sender: Any) {
+        
+        // input が空の時
+        if inputTextView.text == "" {
+            
+            print("Do nothing because: Empty input textview")
 
-        HUD.show(.progress)
-        let japaneseSentence = inputTextView.text ?? ""
-        APIClient().convert(japaneseSentence, convertOutputStyle) { result in
-            if result == "error" {
-                HUD.hide() // dismiss progress anim.
-                HUD.flash(.error, delay: 0.5)
-            } else {
-                self.outputTextView.text = result
-                self.outputTextView.textColor = UIColor.label
-                HUD.hide() // hismiss progress anim.
+        } else {
+            
+            HUD.show(.progress)
+            outputTextView.text = ""
+            outputTextView.placeholder = "変換中"
+            let japaneseSentence = inputTextView.text ?? ""
+            APIClient().convert(japaneseSentence, convertOutputStyle) { result in
+                if result == "error" {
+                    HUD.hide() // dismiss progress anim.
+                    HUD.flash(.labeledError(title: "失敗しました", subtitle: ""), delay: 0.8)
+                } else {
+                    self.outputTextView.text = result
+                    self.outputTextView.textColor = UIColor.label
+                    HUD.hide() // dismiss progress anim.
+                }
             }
+            // キーボードを閉じる
+            inputTextView.endEditing(true)
         }
-        // キーボードを閉じる
-        inputTextView.endEditing(true)
     }
 
     // SegmentControl の処理 (ひらがな，カタカナ切り替え)
@@ -81,7 +91,7 @@ class ConvertViewController: UIViewController, UINavigationBarDelegate {
     @IBAction func tapOutput(_ sender: Any) {
         UIPasteboard.general.string = outputTextView.text
         print("clipboard: \(UIPasteboard.general.string!)")
-        HUD.flash(.success, delay: 0.3)
+        HUD.flash(.labeledSuccess(title: "コピーしました", subtitle: ""), delay: 0.3)
     }
     
     // ナビゲーションバーとステータスバーの境目をなくす
