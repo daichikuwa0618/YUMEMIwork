@@ -1,0 +1,863 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2183E9D4A26664CA64C4D034 /* Pods_YUMEMIworkApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB969F2241BAA5EAE784FE2 /* Pods_YUMEMIworkApp.framework */; };
+		39283F80C1D4E8C927485A4A /* Pods_YUMEMIworkAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38046D1AA46C0EC31C8E4985 /* Pods_YUMEMIworkAppTests.framework */; };
+		42590DE023E9869300528E4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590DDF23E9869300528E4D /* AppDelegate.swift */; };
+		42590DE223E9869300528E4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590DE123E9869300528E4D /* SceneDelegate.swift */; };
+		42590DE423E9869300528E4D /* ConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590DE323E9869300528E4D /* ConvertViewController.swift */; };
+		42590DE923E9869400528E4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42590DE823E9869400528E4D /* Assets.xcassets */; };
+		42590DEC23E9869400528E4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42590DEA23E9869400528E4D /* LaunchScreen.storyboard */; };
+		42590DF723E9869500528E4D /* YUMEMIworkAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590DF623E9869500528E4D /* YUMEMIworkAppTests.swift */; };
+		42590E0223E9869500528E4D /* YUMEMIworkAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E0123E9869500528E4D /* YUMEMIworkAppUITests.swift */; };
+		42590E1323E98B1B00528E4D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1223E98B1B00528E4D /* MainView.swift */; };
+		42590E1523E9966B00528E4D /* GooTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1423E9966B00528E4D /* GooTask.swift */; };
+		42590E1823E9970400528E4D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 42590E1723E9970400528E4D /* Alamofire */; };
+		42590E1A23E9972600528E4D /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1923E9972600528E4D /* APIClientProtocol.swift */; };
+		42590E1C23E9976600528E4D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1B23E9976600528E4D /* APIClient.swift */; };
+		425DBC4623EBF40400FFDD1B /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DBC4523EBF40400FFDD1B /* GradientButton.swift */; };
+		425DBC4823EBF62F00FFDD1B /* myDefColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DBC4723EBF62F00FFDD1B /* myDefColor.swift */; };
+		42FDF9A223EAD778000CBCA9 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FDF9A123EAD778000CBCA9 /* PKHUD.framework */; };
+		42FDF9A323EAD778000CBCA9 /* PKHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FDF9A123EAD778000CBCA9 /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42FDF9A723EAFE60000CBCA9 /* ConvertViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FDF9A623EAFE60000CBCA9 /* ConvertViewController.storyboard */; };
+		B3E021F0182A770D8C38EDF1 /* Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D8DC892323A9C65A4BB5A0 /* Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42590DF323E9869500528E4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42590DD423E9869300528E4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42590DDB23E9869300528E4D;
+			remoteInfo = YUMEMIworkApp;
+		};
+		42590DFE23E9869500528E4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42590DD423E9869300528E4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42590DDB23E9869300528E4D;
+			remoteInfo = YUMEMIworkApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		42FDF9A423EAD779000CBCA9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				42FDF9A323EAD778000CBCA9 /* PKHUD.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		38046D1AA46C0EC31C8E4985 /* Pods_YUMEMIworkAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YUMEMIworkAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42590DDC23E9869300528E4D /* YUMEMIworkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUMEMIworkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42590DDF23E9869300528E4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		42590DE123E9869300528E4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		42590DE323E9869300528E4D /* ConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewController.swift; sourceTree = "<group>"; };
+		42590DE823E9869400528E4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42590DEB23E9869400528E4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		42590DED23E9869400528E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42590DF223E9869500528E4D /* YUMEMIworkAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YUMEMIworkAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42590DF623E9869500528E4D /* YUMEMIworkAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YUMEMIworkAppTests.swift; sourceTree = "<group>"; };
+		42590DF823E9869500528E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42590DFD23E9869500528E4D /* YUMEMIworkAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YUMEMIworkAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42590E0123E9869500528E4D /* YUMEMIworkAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YUMEMIworkAppUITests.swift; sourceTree = "<group>"; };
+		42590E0323E9869500528E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42590E1223E98B1B00528E4D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		42590E1423E9966B00528E4D /* GooTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooTask.swift; sourceTree = "<group>"; };
+		42590E1923E9972600528E4D /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
+		42590E1B23E9976600528E4D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		425DBC4523EBF40400FFDD1B /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
+		425DBC4723EBF62F00FFDD1B /* myDefColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myDefColor.swift; sourceTree = "<group>"; };
+		42FDF9A123EAD778000CBCA9 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
+		42FDF9A623EAFE60000CBCA9 /* ConvertViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConvertViewController.storyboard; sourceTree = "<group>"; };
+		533D1FD04EE9094DDB6EEB4F /* Pods-YUMEMIworkApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUMEMIworkApp.release.xcconfig"; path = "Target Support Files/Pods-YUMEMIworkApp/Pods-YUMEMIworkApp.release.xcconfig"; sourceTree = "<group>"; };
+		5508E089F81F729EACF6CB56 /* Pods-YUMEMIworkApp-YUMEMIworkAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUMEMIworkApp-YUMEMIworkAppUITests.release.xcconfig"; path = "Target Support Files/Pods-YUMEMIworkApp-YUMEMIworkAppUITests/Pods-YUMEMIworkApp-YUMEMIworkAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		64D8DC892323A9C65A4BB5A0 /* Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A2B76735F859ADD67C834D3 /* Pods-YUMEMIworkApp-YUMEMIworkAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUMEMIworkApp-YUMEMIworkAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-YUMEMIworkApp-YUMEMIworkAppUITests/Pods-YUMEMIworkApp-YUMEMIworkAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8B8B0F5BE6047C8066F7B91 /* Pods-YUMEMIworkAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUMEMIworkAppTests.debug.xcconfig"; path = "Target Support Files/Pods-YUMEMIworkAppTests/Pods-YUMEMIworkAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD3CE37967B72F91FBD99172 /* Pods-YUMEMIworkApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUMEMIworkApp.debug.xcconfig"; path = "Target Support Files/Pods-YUMEMIworkApp/Pods-YUMEMIworkApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CBB969F2241BAA5EAE784FE2 /* Pods_YUMEMIworkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YUMEMIworkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8E79C57955C5099195F8FC4 /* Pods-YUMEMIworkAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YUMEMIworkAppTests.release.xcconfig"; path = "Target Support Files/Pods-YUMEMIworkAppTests/Pods-YUMEMIworkAppTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42590DD923E9869300528E4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42FDF9A223EAD778000CBCA9 /* PKHUD.framework in Frameworks */,
+				42590E1823E9970400528E4D /* Alamofire in Frameworks */,
+				2183E9D4A26664CA64C4D034 /* Pods_YUMEMIworkApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42590DEF23E9869500528E4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39283F80C1D4E8C927485A4A /* Pods_YUMEMIworkAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42590DFA23E9869500528E4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3E021F0182A770D8C38EDF1 /* Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42590DD323E9869300528E4D = {
+			isa = PBXGroup;
+			children = (
+				42590DDE23E9869300528E4D /* YUMEMIworkApp */,
+				42590DF523E9869500528E4D /* YUMEMIworkAppTests */,
+				42590E0023E9869500528E4D /* YUMEMIworkAppUITests */,
+				42590DDD23E9869300528E4D /* Products */,
+				D6D4609DC15A3E55E9F0B8DF /* Pods */,
+				DD2203EB361ACDFEC7072BB2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		42590DDD23E9869300528E4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42590DDC23E9869300528E4D /* YUMEMIworkApp.app */,
+				42590DF223E9869500528E4D /* YUMEMIworkAppTests.xctest */,
+				42590DFD23E9869500528E4D /* YUMEMIworkAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42590DDE23E9869300528E4D /* YUMEMIworkApp */ = {
+			isa = PBXGroup;
+			children = (
+				42590E1123E9888300528E4D /* Model */,
+				42590E1023E9887A00528E4D /* View */,
+				42590E0F23E9886400528E4D /* Controller */,
+				42590DDF23E9869300528E4D /* AppDelegate.swift */,
+				42590DE123E9869300528E4D /* SceneDelegate.swift */,
+				42FDF9A623EAFE60000CBCA9 /* ConvertViewController.storyboard */,
+				42590DE823E9869400528E4D /* Assets.xcassets */,
+				42590DEA23E9869400528E4D /* LaunchScreen.storyboard */,
+				42590DED23E9869400528E4D /* Info.plist */,
+			);
+			path = YUMEMIworkApp;
+			sourceTree = "<group>";
+		};
+		42590DF523E9869500528E4D /* YUMEMIworkAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				42590DF623E9869500528E4D /* YUMEMIworkAppTests.swift */,
+				42590DF823E9869500528E4D /* Info.plist */,
+			);
+			path = YUMEMIworkAppTests;
+			sourceTree = "<group>";
+		};
+		42590E0023E9869500528E4D /* YUMEMIworkAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				42590E0123E9869500528E4D /* YUMEMIworkAppUITests.swift */,
+				42590E0323E9869500528E4D /* Info.plist */,
+			);
+			path = YUMEMIworkAppUITests;
+			sourceTree = "<group>";
+		};
+		42590E0F23E9886400528E4D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42590DE323E9869300528E4D /* ConvertViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		42590E1023E9887A00528E4D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42590E1223E98B1B00528E4D /* MainView.swift */,
+				425DBC4523EBF40400FFDD1B /* GradientButton.swift */,
+				425DBC4723EBF62F00FFDD1B /* myDefColor.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42590E1123E9888300528E4D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42590E1423E9966B00528E4D /* GooTask.swift */,
+				42590E1923E9972600528E4D /* APIClientProtocol.swift */,
+				42590E1B23E9976600528E4D /* APIClient.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6D4609DC15A3E55E9F0B8DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD3CE37967B72F91FBD99172 /* Pods-YUMEMIworkApp.debug.xcconfig */,
+				533D1FD04EE9094DDB6EEB4F /* Pods-YUMEMIworkApp.release.xcconfig */,
+				6A2B76735F859ADD67C834D3 /* Pods-YUMEMIworkApp-YUMEMIworkAppUITests.debug.xcconfig */,
+				5508E089F81F729EACF6CB56 /* Pods-YUMEMIworkApp-YUMEMIworkAppUITests.release.xcconfig */,
+				A8B8B0F5BE6047C8066F7B91 /* Pods-YUMEMIworkAppTests.debug.xcconfig */,
+				F8E79C57955C5099195F8FC4 /* Pods-YUMEMIworkAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DD2203EB361ACDFEC7072BB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42FDF9A123EAD778000CBCA9 /* PKHUD.framework */,
+				CBB969F2241BAA5EAE784FE2 /* Pods_YUMEMIworkApp.framework */,
+				64D8DC892323A9C65A4BB5A0 /* Pods_YUMEMIworkApp_YUMEMIworkAppUITests.framework */,
+				38046D1AA46C0EC31C8E4985 /* Pods_YUMEMIworkAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42590DDB23E9869300528E4D /* YUMEMIworkApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42590E0623E9869500528E4D /* Build configuration list for PBXNativeTarget "YUMEMIworkApp" */;
+			buildPhases = (
+				B9201B57D44C495383F2CE96 /* [CP] Check Pods Manifest.lock */,
+				42590DD823E9869300528E4D /* Sources */,
+				42590DD923E9869300528E4D /* Frameworks */,
+				42590DDA23E9869300528E4D /* Resources */,
+				540C55B3A362372452EBE9C0 /* [CP] Embed Pods Frameworks */,
+				42FDF9A423EAD779000CBCA9 /* Embed Frameworks */,
+				42FDF9A523EAD7ED000CBCA9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YUMEMIworkApp;
+			packageProductDependencies = (
+				42590E1723E9970400528E4D /* Alamofire */,
+			);
+			productName = YUMEMIworkApp;
+			productReference = 42590DDC23E9869300528E4D /* YUMEMIworkApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42590DF123E9869500528E4D /* YUMEMIworkAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42590E0923E9869500528E4D /* Build configuration list for PBXNativeTarget "YUMEMIworkAppTests" */;
+			buildPhases = (
+				A505E539667406E6D59309CC /* [CP] Check Pods Manifest.lock */,
+				42590DEE23E9869500528E4D /* Sources */,
+				42590DEF23E9869500528E4D /* Frameworks */,
+				42590DF023E9869500528E4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42590DF423E9869500528E4D /* PBXTargetDependency */,
+			);
+			name = YUMEMIworkAppTests;
+			productName = YUMEMIworkAppTests;
+			productReference = 42590DF223E9869500528E4D /* YUMEMIworkAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		42590DFC23E9869500528E4D /* YUMEMIworkAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42590E0C23E9869500528E4D /* Build configuration list for PBXNativeTarget "YUMEMIworkAppUITests" */;
+			buildPhases = (
+				B865C5E915C51A9CE0FFED69 /* [CP] Check Pods Manifest.lock */,
+				42590DF923E9869500528E4D /* Sources */,
+				42590DFA23E9869500528E4D /* Frameworks */,
+				42590DFB23E9869500528E4D /* Resources */,
+				8CFE28AD9F2BF002AE4187A1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42590DFF23E9869500528E4D /* PBXTargetDependency */,
+			);
+			name = YUMEMIworkAppUITests;
+			productName = YUMEMIworkAppUITests;
+			productReference = 42590DFD23E9869500528E4D /* YUMEMIworkAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42590DD423E9869300528E4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Daichi Hayashi";
+				TargetAttributes = {
+					42590DDB23E9869300528E4D = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					42590DF123E9869500528E4D = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 42590DDB23E9869300528E4D;
+					};
+					42590DFC23E9869500528E4D = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 42590DDB23E9869300528E4D;
+					};
+				};
+			};
+			buildConfigurationList = 42590DD723E9869300528E4D /* Build configuration list for PBXProject "YUMEMIworkApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42590DD323E9869300528E4D;
+			packageReferences = (
+				42590E1623E9970400528E4D /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
+			productRefGroup = 42590DDD23E9869300528E4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42590DDB23E9869300528E4D /* YUMEMIworkApp */,
+				42590DF123E9869500528E4D /* YUMEMIworkAppTests */,
+				42590DFC23E9869500528E4D /* YUMEMIworkAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42590DDA23E9869300528E4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42590DEC23E9869400528E4D /* LaunchScreen.storyboard in Resources */,
+				42590DE923E9869400528E4D /* Assets.xcassets in Resources */,
+				42FDF9A723EAFE60000CBCA9 /* ConvertViewController.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42590DF023E9869500528E4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42590DFB23E9869500528E4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		42FDF9A523EAD7ED000CBCA9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+		540C55B3A362372452EBE9C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YUMEMIworkApp/Pods-YUMEMIworkApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YUMEMIworkApp/Pods-YUMEMIworkApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YUMEMIworkApp/Pods-YUMEMIworkApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CFE28AD9F2BF002AE4187A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YUMEMIworkApp-YUMEMIworkAppUITests/Pods-YUMEMIworkApp-YUMEMIworkAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YUMEMIworkApp-YUMEMIworkAppUITests/Pods-YUMEMIworkApp-YUMEMIworkAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YUMEMIworkApp-YUMEMIworkAppUITests/Pods-YUMEMIworkApp-YUMEMIworkAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A505E539667406E6D59309CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YUMEMIworkAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B865C5E915C51A9CE0FFED69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YUMEMIworkApp-YUMEMIworkAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9201B57D44C495383F2CE96 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YUMEMIworkApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42590DD823E9869300528E4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42590DE423E9869300528E4D /* ConvertViewController.swift in Sources */,
+				425DBC4623EBF40400FFDD1B /* GradientButton.swift in Sources */,
+				42590E1C23E9976600528E4D /* APIClient.swift in Sources */,
+				425DBC4823EBF62F00FFDD1B /* myDefColor.swift in Sources */,
+				42590E1323E98B1B00528E4D /* MainView.swift in Sources */,
+				42590E1523E9966B00528E4D /* GooTask.swift in Sources */,
+				42590DE023E9869300528E4D /* AppDelegate.swift in Sources */,
+				42590DE223E9869300528E4D /* SceneDelegate.swift in Sources */,
+				42590E1A23E9972600528E4D /* APIClientProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42590DEE23E9869500528E4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42590DF723E9869500528E4D /* YUMEMIworkAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42590DF923E9869500528E4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42590E0223E9869500528E4D /* YUMEMIworkAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42590DF423E9869500528E4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42590DDB23E9869300528E4D /* YUMEMIworkApp */;
+			targetProxy = 42590DF323E9869500528E4D /* PBXContainerItemProxy */;
+		};
+		42590DFF23E9869500528E4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42590DDB23E9869300528E4D /* YUMEMIworkApp */;
+			targetProxy = 42590DFE23E9869500528E4D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42590DEA23E9869400528E4D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42590DEB23E9869400528E4D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42590E0423E9869500528E4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		42590E0523E9869500528E4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42590E0723E9869500528E4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD3CE37967B72F91FBD99172 /* Pods-YUMEMIworkApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X79UHLMR5A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = YUMEMIworkApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Daichi-hayashi.YUMEMIworkApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42590E0823E9869500528E4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 533D1FD04EE9094DDB6EEB4F /* Pods-YUMEMIworkApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X79UHLMR5A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = YUMEMIworkApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Daichi-hayashi.YUMEMIworkApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		42590E0A23E9869500528E4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8B8B0F5BE6047C8066F7B91 /* Pods-YUMEMIworkAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X79UHLMR5A;
+				INFOPLIST_FILE = YUMEMIworkAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Daichi-hayashi.YUMEMIworkAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YUMEMIworkApp.app/YUMEMIworkApp";
+			};
+			name = Debug;
+		};
+		42590E0B23E9869500528E4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8E79C57955C5099195F8FC4 /* Pods-YUMEMIworkAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X79UHLMR5A;
+				INFOPLIST_FILE = YUMEMIworkAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Daichi-hayashi.YUMEMIworkAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YUMEMIworkApp.app/YUMEMIworkApp";
+			};
+			name = Release;
+		};
+		42590E0D23E9869500528E4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A2B76735F859ADD67C834D3 /* Pods-YUMEMIworkApp-YUMEMIworkAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X79UHLMR5A;
+				INFOPLIST_FILE = YUMEMIworkAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Daichi-hayashi.YUMEMIworkAppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YUMEMIworkApp;
+			};
+			name = Debug;
+		};
+		42590E0E23E9869500528E4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5508E089F81F729EACF6CB56 /* Pods-YUMEMIworkApp-YUMEMIworkAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X79UHLMR5A;
+				INFOPLIST_FILE = YUMEMIworkAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Daichi-hayashi.YUMEMIworkAppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YUMEMIworkApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42590DD723E9869300528E4D /* Build configuration list for PBXProject "YUMEMIworkApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42590E0423E9869500528E4D /* Debug */,
+				42590E0523E9869500528E4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42590E0623E9869500528E4D /* Build configuration list for PBXNativeTarget "YUMEMIworkApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42590E0723E9869500528E4D /* Debug */,
+				42590E0823E9869500528E4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42590E0923E9869500528E4D /* Build configuration list for PBXNativeTarget "YUMEMIworkAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42590E0A23E9869500528E4D /* Debug */,
+				42590E0B23E9869500528E4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42590E0C23E9869500528E4D /* Build configuration list for PBXNativeTarget "YUMEMIworkAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42590E0D23E9869500528E4D /* Debug */,
+				42590E0E23E9869500528E4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		42590E1623E9970400528E4D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		42590E1723E9970400528E4D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42590E1623E9970400528E4D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 42590DD423E9869300528E4D /* Project object */;
+}
