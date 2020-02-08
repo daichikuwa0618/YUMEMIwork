@@ -21,13 +21,13 @@ class GradientButton: UIButton {
     
     var gradientLayer = CAGradientLayer()
 
-    @IBInspectable var startColor: UIColor = UIColor.BlogBlue() {
+    @IBInspectable var startColor: UIColor = .blogBlue {
         didSet {
             setGradient()
         }
     }
 
-    @IBInspectable var endColor: UIColor = UIColor.BlogPurple() {
+    @IBInspectable var endColor: UIColor = .blogPurple {
         didSet {
             setGradient()
         }

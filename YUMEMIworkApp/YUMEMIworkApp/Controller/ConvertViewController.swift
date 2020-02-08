@@ -10,27 +10,29 @@ import UIKit
 import UITextView_Placeholder
 import PKHUD
 
-class ConvertViewController: UIViewController, UINavigationBarDelegate {
-    
-    @IBOutlet weak var inputTextView: UITextView!
-    @IBOutlet weak var convertButton: UIButton!
-    @IBOutlet weak var kanaSelect: UISegmentedControl!
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var outputTextView: UITextView!
-    
+class ConvertViewController: UIViewController {
+
+    // MARK: - IBOutlet
+    @IBOutlet private weak var inputTextView: UITextView!
+    @IBOutlet private weak var convertButton: UIButton!
+    @IBOutlet private weak var kanaSelect: UISegmentedControl!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var outputTextView: UITextView!
+
+    // MARK: - Property
     private var convertOutputStyle: String = "hiragana"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         navigationBar.delegate = self
-        
+
+        //TODO: Localize
         inputTextView.placeholder = "ここに変換するテキストを入力してください"
         outputTextView.placeholder = "読みがなが出力されます"
         
-        inputTextView.tintColor = UIColor.BlogBlue()
-        
+        inputTextView.tintColor = .blogBlue
+
         convertButton.layer.shadowOpacity = 0.4
         convertButton.layer.shadowColor = UIColor.black.cgColor
         convertButton.layer.shadowRadius = 7
@@ -40,11 +42,12 @@ class ConvertViewController: UIViewController, UINavigationBarDelegate {
         HUD.dimsBackground = false // アニメーション時の暗転をなくす
     }
 
+// MARK: - IBAction
     // 変換ボタンが押されたときの処理
     @IBAction func tapConvert(_ sender: Any) {
         
         // input が空の時
-        if inputTextView.text == "" {
+        if inputTextView.text.isEmpty {
             
             print("Do nothing because: Empty input textview")
 
@@ -71,7 +74,9 @@ class ConvertViewController: UIViewController, UINavigationBarDelegate {
 
     // SegmentControl の処理 (ひらがな，カタカナ切り替え)
     @IBAction func kanaSelectControl(_ sender: UISegmentedControl) {
-        
+
+        convertOutputStyle = sender.selectedSegmentIndex == 1 ? "katakana" : "hiragana"
+        /*
         switch sender.selectedSegmentIndex {
         case 0:
             convertOutputStyle = "hiragana"
@@ -80,6 +85,7 @@ class ConvertViewController: UIViewController, UINavigationBarDelegate {
         default:
             convertOutputStyle = "hiragana"
         }
+ */
     }
     
     // TextView とキーボード以外をタップしたらキーボードを閉じる
@@ -100,3 +106,7 @@ class ConvertViewController: UIViewController, UINavigationBarDelegate {
     }
 }
 
+// MARK: - UINavigationBarDelegate
+extension ConvertViewController: UINavigationBarDelegate {
+
+}
