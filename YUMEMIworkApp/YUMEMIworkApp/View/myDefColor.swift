@@ -11,14 +11,12 @@ import UIKit
 extension UIColor {
     
     // #005C97
-    class func BlogBlue() -> UIColor {
-        let theColor = UIColor.init(red: 0.0, green: 92 / 255, blue: 151 / 255, alpha: 1.0)
-        return theColor
+    class var blogBlue: UIColor {
+        return UIColor(named: "blogBlue") ?? .blue
     }
-    
+
     // #363795
-    class func BlogPurple() -> UIColor {
-        let theColor = UIColor.init(red: 54 / 255, green: 55 / 255, blue: 149 / 255, alpha: 1.0)
-        return theColor
+    class var blogPurple: UIColor {
+        return UIColor(named: "blogPurple") ?? .purple
     }
 }
