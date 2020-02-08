@@ -32,7 +32,7 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCX-ow-drY" customClass="GradientButton" customModule="YUMEMIworkApp" customModuleProvider="target">
                                 <rect key="frame" x="142" y="198" width="130" height="40"/>
-                                <color key="backgroundColor" red="0.73333333329999995" green="0.52941176469999995" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="Uen-b9-6ki"/>
                                     <constraint firstAttribute="height" constant="40" id="zcN-QX-UQf"/>

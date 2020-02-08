@@ -10,14 +10,6 @@ import UIKit
 
 @IBDesignable
 class GradientButton: UIButton {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     
     var gradientLayer = CAGradientLayer()
 
@@ -82,5 +74,14 @@ class GradientButton: UIButton {
 
         imageView?.layer.zPosition = 0
 
+    }
+
+    func setColor(isEnable: Bool) {
+        self.isEnabled = isEnable
+        if isEnable {
+            gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+        } else {
+            gradientLayer.colors = [UIColor.secondaryLabel, UIColor.secondaryLabel]
+        }
     }
 }
