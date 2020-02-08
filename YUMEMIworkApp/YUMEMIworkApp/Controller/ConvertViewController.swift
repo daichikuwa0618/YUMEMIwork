@@ -34,6 +34,7 @@ class ConvertViewController: UIViewController {
         
         inputTextView.tintColor = .blogBlue
 
+        convertButton.layer.masksToBounds = false
         convertButton.layer.shadowOpacity = 0.4
         convertButton.layer.shadowColor = UIColor.black.cgColor
         convertButton.layer.shadowRadius = 7
@@ -50,9 +51,8 @@ class ConvertViewController: UIViewController {
         
         // input が空の時
         if inputTextView.text.isEmpty {
-            
-            print("Do nothing because: Empty input textview")
 
+            print("Do nothing because: Empty input textview")
         } else {
             
             HUD.show(.progress)
@@ -78,16 +78,6 @@ class ConvertViewController: UIViewController {
     @IBAction func kanaSelectControl(_ sender: UISegmentedControl) {
 
         convertOutputStyle = sender.selectedSegmentIndex == 1 ? "katakana" : "hiragana"
-        /*
-        switch sender.selectedSegmentIndex {
-        case 0:
-            convertOutputStyle = "hiragana"
-        case 1:
-            convertOutputStyle = "katakana"
-        default:
-            convertOutputStyle = "hiragana"
-        }
- */
     }
     
     // TextView とキーボード以外をタップしたらキーボードを閉じる
@@ -117,5 +107,8 @@ extension ConvertViewController: UINavigationBarDelegate {
 extension ConvertViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         convertButton.setColor(isEnable: !inputTextView.text.isEmpty)
+        if inputTextView.text.isEmpty {
+            outputTextView.placeholder = "読みがなが出力されます"
+        }
     }
 }
