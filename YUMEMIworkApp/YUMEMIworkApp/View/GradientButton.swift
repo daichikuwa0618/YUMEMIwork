@@ -83,4 +83,13 @@ class GradientButton: UIButton {
         imageView?.layer.zPosition = 0
 
     }
+
+    func setColor(isEnable: Bool) {
+        self.isEnabled = isEnable
+        if isEnable {
+            gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+        } else {
+            gradientLayer.colors = [UIColor.secondaryLabel, UIColor.secondaryLabel]
+        }
+    }
 }

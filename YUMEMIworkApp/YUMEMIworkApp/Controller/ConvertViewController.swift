@@ -14,7 +14,7 @@ class ConvertViewController: UIViewController {
 
     // MARK: - IBOutlet
     @IBOutlet private weak var inputTextView: UITextView!
-    @IBOutlet private weak var convertButton: UIButton!
+    @IBOutlet private weak var convertButton: GradientButton!
     @IBOutlet private weak var kanaSelect: UISegmentedControl!
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var outputTextView: UITextView!
@@ -26,6 +26,7 @@ class ConvertViewController: UIViewController {
         super.viewDidLoad()
         
         navigationBar.delegate = self
+        inputTextView.delegate = self
 
         //TODO: Localize
         inputTextView.placeholder = "ここに変換するテキストを入力してください"
@@ -37,6 +38,7 @@ class ConvertViewController: UIViewController {
         convertButton.layer.shadowColor = UIColor.black.cgColor
         convertButton.layer.shadowRadius = 7
         convertButton.layer.shadowOffset = CGSize(width: 1, height: 1)
+        convertButton.setColor(isEnable: false)
 
         // HUD アニメーション
         HUD.dimsBackground = false // アニメーション時の暗転をなくす
@@ -109,4 +111,11 @@ class ConvertViewController: UIViewController {
 // MARK: - UINavigationBarDelegate
 extension ConvertViewController: UINavigationBarDelegate {
 
+}
+
+// MARK: - UITextViewDelegate
+extension ConvertViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        convertButton.setColor(isEnable: !inputTextView.text.isEmpty)
+    }
 }
