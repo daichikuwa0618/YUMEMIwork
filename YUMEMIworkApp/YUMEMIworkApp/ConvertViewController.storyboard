@@ -141,6 +141,7 @@
                     </view>
                     <connections>
                         <outlet property="convertButton" destination="yCX-ow-drY" id="H8v-cu-P57"/>
+                        <outlet property="historyTableView" destination="nls-bW-HlB" id="FPU-QS-a3W"/>
                         <outlet property="inputTextView" destination="qgZ-7a-0H3" id="Mz3-jj-j3T"/>
                         <outlet property="kanaSelect" destination="XK3-2g-UVd" id="Gdk-IG-KDh"/>
                         <outlet property="navigationBar" destination="lCm-6V-Xlb" id="aMQ-WU-SBd"/>

@@ -9,6 +9,7 @@
 import UIKit
 import UITextView_Placeholder
 import PKHUD
+import RealmSwift
 
 class ConvertViewController: UIViewController {
 
@@ -18,15 +19,20 @@ class ConvertViewController: UIViewController {
     @IBOutlet private weak var kanaSelect: UISegmentedControl!
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var outputTextView: UITextView!
+    @IBOutlet private weak var historyTableView: UITableView!
 
     // MARK: - Property
     private var convertOutputStyle: String = "hiragana"
+    private var historyItems: Results<HistoryModel>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let realm = try! Realm()
         
         navigationBar.delegate = self
         inputTextView.delegate = self
+        historyTableView.dataSource = self as UITableViewDataSource
 
         //TODO: Localize
         inputTextView.placeholder = "ここに変換するテキストを入力してください"
@@ -43,11 +49,17 @@ class ConvertViewController: UIViewController {
 
         // HUD アニメーション
         HUD.dimsBackground = false // アニメーション時の暗転をなくす
+
+        // history
+        self.historyItems = realm.objects(HistoryModel.self)
     }
 
 // MARK: - IBAction
     // 変換ボタンが押されたときの処理
     @IBAction func tapConvert(_ sender: Any) {
+
+        // historyModel をインスタンス化
+        let historyModel: HistoryModel = HistoryModel()
         
         // input が空の時
         if inputTextView.text.isEmpty {
@@ -66,6 +78,13 @@ class ConvertViewController: UIViewController {
                 } else {
                     self.outputTextView.text = result
                     self.outputTextView.textColor = UIColor.label
+                    historyModel.content = self.inputTextView.text
+                    let realm = try! Realm()
+
+                    try! realm.write {
+                        realm.add(historyModel)
+                    }
+                    self.historyTableView.reloadData()
                     HUD.hide() // dismiss progress anim.
                 }
             }
@@ -111,4 +130,26 @@ extension ConvertViewController: UITextViewDelegate {
             outputTextView.placeholder = "読みがなが出力されます"
         }
     }
+}
+
+// MARK: - UITableViewDataSource
+extension ConvertViewController: UITableViewDataSource {
+
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return self.historyItems.count
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+    // TodoModelクラス型の変数を宣言
+    let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+
+    // 取得したTodoリストからn番目を変数に代入
+    let item: HistoryModel = self.historyItems[(indexPath as NSIndexPath).row];
+
+    // 取得した情報をセルに反映
+    cell.textLabel?.text = item.content
+
+    return cell
+  }
 }
