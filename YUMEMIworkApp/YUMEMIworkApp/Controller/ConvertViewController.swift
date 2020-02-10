@@ -28,8 +28,6 @@ class ConvertViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let realm = try! Realm()
         
         navigationBar.delegate = self
         inputTextView.delegate = self
@@ -79,8 +77,8 @@ class ConvertViewController: UIViewController {
                 } else {
                     self.outputTextView.text = result
                     self.outputTextView.textColor = UIColor.label
-                    historyModel.content = self.inputTextView.text
-//                    let realm = try! Realm()
+                    historyModel.contentKanji = self.inputTextView.text
+                    historyModel.contentRubi = self.outputTextView.text
 
                     try! self.realm.write {
                         self.realm.add(historyModel)
@@ -148,7 +146,8 @@ extension ConvertViewController: UITableViewDataSource {
         let item: HistoryModel = self.historyItems.reversed()[(indexPath as NSIndexPath).row]
 
         // 取得した情報をセルに反映
-        cell.textLabel?.text = item.content
+        cell.textLabel?.text = item.contentKanji
+        cell.detailTextLabel?.text = item.contentRubi
 
         return cell
     }
