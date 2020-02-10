@@ -24,6 +24,7 @@ class ConvertViewController: UIViewController {
     // MARK: - Property
     private var convertOutputStyle: String = "hiragana"
     private var historyItems: Results<HistoryModel>!
+    private let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,10 +80,10 @@ class ConvertViewController: UIViewController {
                     self.outputTextView.text = result
                     self.outputTextView.textColor = UIColor.label
                     historyModel.content = self.inputTextView.text
-                    let realm = try! Realm()
+//                    let realm = try! Realm()
 
-                    try! realm.write {
-                        realm.add(historyModel)
+                    try! self.realm.write {
+                        self.realm.add(historyModel)
                     }
                     self.historyTableView.reloadData()
                     HUD.hide() // dismiss progress anim.
@@ -135,21 +136,36 @@ extension ConvertViewController: UITextViewDelegate {
 // MARK: - UITableViewDataSource
 extension ConvertViewController: UITableViewDataSource {
 
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.historyItems.count
-  }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.historyItems.count
+    }
 
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-    // TodoModelクラス型の変数を宣言
-    let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-    // 取得したTodoリストからn番目を変数に代入
-    let item: HistoryModel = self.historyItems[(indexPath as NSIndexPath).row];
+        // 取得したリストからn番目を変数に代入
+        let item: HistoryModel = self.historyItems.reversed()[(indexPath as NSIndexPath).row]
 
-    // 取得した情報をセルに反映
-    cell.textLabel?.text = item.content
+        // 取得した情報をセルに反映
+        cell.textLabel?.text = item.content
 
-    return cell
-  }
+        return cell
+    }
+
+    // セルの編集を可能にする
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    // スワイプしたセルを削除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            let deleteHistory = self.historyItems![indexPath.row]
+            try! realm.write {
+                realm.delete(deleteHistory)
+            }
+            self.historyTableView.reloadData()
+        }
+    }
 }
