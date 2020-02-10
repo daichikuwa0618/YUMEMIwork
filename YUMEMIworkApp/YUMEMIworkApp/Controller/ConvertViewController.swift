@@ -9,6 +9,7 @@
 import UIKit
 import UITextView_Placeholder
 import PKHUD
+import RealmSwift
 
 class ConvertViewController: UIViewController {
 
@@ -18,15 +19,19 @@ class ConvertViewController: UIViewController {
     @IBOutlet private weak var kanaSelect: UISegmentedControl!
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var outputTextView: UITextView!
+    @IBOutlet private weak var historyTableView: UITableView!
 
     // MARK: - Property
     private var convertOutputStyle: String = "hiragana"
+    private var historyItems: Results<HistoryModel>!
+    private let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationBar.delegate = self
         inputTextView.delegate = self
+        historyTableView.dataSource = self as UITableViewDataSource
 
         //TODO: Localize
         inputTextView.placeholder = "ここに変換するテキストを入力してください"
@@ -43,11 +48,17 @@ class ConvertViewController: UIViewController {
 
         // HUD アニメーション
         HUD.dimsBackground = false // アニメーション時の暗転をなくす
+
+        // history
+        self.historyItems = realm.objects(HistoryModel.self)
     }
 
 // MARK: - IBAction
     // 変換ボタンが押されたときの処理
     @IBAction func tapConvert(_ sender: Any) {
+
+        // historyModel をインスタンス化
+        let historyModel: HistoryModel = HistoryModel()
         
         // input が空の時
         if inputTextView.text.isEmpty {
@@ -66,6 +77,13 @@ class ConvertViewController: UIViewController {
                 } else {
                     self.outputTextView.text = result
                     self.outputTextView.textColor = UIColor.label
+                    historyModel.contentKanji = self.inputTextView.text
+                    historyModel.contentRubi = self.outputTextView.text
+
+                    try! self.realm.write {
+                        self.realm.add(historyModel)
+                    }
+                    self.historyTableView.reloadData()
                     HUD.hide() // dismiss progress anim.
                 }
             }
@@ -109,6 +127,44 @@ extension ConvertViewController: UITextViewDelegate {
         convertButton.setColor(isEnable: !inputTextView.text.isEmpty)
         if inputTextView.text.isEmpty {
             outputTextView.placeholder = "読みがなが出力されます"
+        }
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension ConvertViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.historyItems.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+
+        // 取得したリストからn番目を変数に代入
+        let item: HistoryModel = self.historyItems.reversed()[(indexPath as NSIndexPath).row]
+
+        // 取得した情報をセルに反映
+        cell.textLabel?.text = item.contentKanji
+        cell.detailTextLabel?.text = item.contentRubi
+
+        return cell
+    }
+
+    // セルの編集を可能にする
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    // スワイプしたセルを削除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            let deleteHistory = self.historyItems![indexPath.row]
+            try! realm.write {
+                realm.delete(deleteHistory)
+            }
+            self.historyTableView.reloadData()
         }
     }
 }
