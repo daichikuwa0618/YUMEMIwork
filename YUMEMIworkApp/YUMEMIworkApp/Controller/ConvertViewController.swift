@@ -19,15 +19,16 @@ class ConvertViewController: UIViewController {
     @IBOutlet private weak var kanaSelect: UISegmentedControl!
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var outputTextView: UITextView!
-    @IBOutlet private weak var historyTableView: UITableView!
+    @IBOutlet weak var historyTableView: UITableView!
 
     // MARK: - Property
     private var convertOutputStyle: String = "hiragana"
-    private var historyItems: Results<HistoryModel>!
-    private let realm = try! Realm()
-    
+    var historyItems: Results<HistoryModel>!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let realm = try! Realm()
         
         navigationBar.delegate = self
         inputTextView.delegate = self
@@ -53,42 +54,37 @@ class ConvertViewController: UIViewController {
         self.historyItems = realm.objects(HistoryModel.self)
     }
 
-// MARK: - IBAction
-    // 変換ボタンが押されたときの処理
+    // MARK: - IBAction
     @IBAction func tapConvert(_ sender: Any) {
 
+        let realm = try! Realm()
         // historyModel をインスタンス化
         let historyModel: HistoryModel = HistoryModel()
-        
-        // input が空の時
-        if inputTextView.text.isEmpty {
 
-            print("Do nothing because: Empty input textview")
-        } else {
-            
-            HUD.show(.progress)
-            outputTextView.text = ""
-            outputTextView.placeholder = "変換中"
-            let japaneseSentence = inputTextView.text ?? ""
-            APIClient().convert(japaneseSentence, convertOutputStyle) { result in
-                if result == "error" {
-                    HUD.hide() // dismiss progress anim.
-                    HUD.flash(.labeledError(title: "失敗しました", subtitle: ""), delay: 0.8)
-                } else {
-                    self.outputTextView.text = result
-                    self.outputTextView.textColor = UIColor.label
-                    historyModel.contentKanji = self.inputTextView.text
-                    historyModel.contentRubi = self.outputTextView.text
+        HUD.show(.progress)
+        outputTextView.text = ""
+        outputTextView.placeholder = "変換中"
+        let japaneseSentence = inputTextView.text ?? ""
+        APIClient().convert(japaneseSentence, convertOutputStyle) { result in
+            if result == "error" {
+                HUD.hide() // dismiss progress anim.
+                HUD.flash(.labeledError(title: "失敗しました", subtitle: ""), delay: 0.8)
+            } else {
+                self.outputTextView.text = result
+                self.outputTextView.textColor = UIColor.label
+                historyModel.contentKanji = self.inputTextView.text
+                historyModel.contentRubi = self.outputTextView.text
 
-                    try! self.realm.write {
-                        self.realm.add(historyModel)
-                    }
-                    self.historyTableView.reloadData()
-                    HUD.hide() // dismiss progress anim.
+                try! realm.write {
+                    realm.add(historyModel)
                 }
+                self.historyTableView.reloadData()
+                HUD.hide() // dismiss progress anim.
+                // ボタンを無効にする
+                self.convertButton.setColor(isEnable: false)
             }
             // キーボードを閉じる
-            inputTextView.endEditing(true)
+            self.inputTextView.endEditing(true)
         }
     }
 
@@ -125,46 +121,13 @@ extension ConvertViewController: UINavigationBarDelegate {
 extension ConvertViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         convertButton.setColor(isEnable: !inputTextView.text.isEmpty)
+        // 入力が空の時
         if inputTextView.text.isEmpty {
             outputTextView.placeholder = "読みがなが出力されます"
-        }
-    }
-}
-
-// MARK: - UITableViewDataSource
-extension ConvertViewController: UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.historyItems.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-        // 取得したリストからn番目を変数に代入
-        let item: HistoryModel = self.historyItems.reversed()[(indexPath as NSIndexPath).row]
-
-        // 取得した情報をセルに反映
-        cell.textLabel?.text = item.contentKanji
-        cell.detailTextLabel?.text = item.contentRubi
-
-        return cell
-    }
-
-    // セルの編集を可能にする
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-
-    // スワイプしたセルを削除
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete {
-            let deleteHistory = self.historyItems![indexPath.row]
-            try! realm.write {
-                realm.delete(deleteHistory)
-            }
-            self.historyTableView.reloadData()
+        // 前回の変換から変更がない時
+        } else if inputTextView.text == self.historyItems.last?.contentKanji {
+            print("Do nothing because: No change from last time")
+            convertButton.setColor(isEnable: false)
         }
     }
 }
