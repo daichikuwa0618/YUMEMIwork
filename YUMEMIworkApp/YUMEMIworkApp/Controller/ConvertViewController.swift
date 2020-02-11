@@ -128,7 +128,8 @@ extension ConvertViewController: UITextViewDelegate {
         if inputTextView.text.isEmpty {
             outputTextView.placeholder = "読みがなが出力されます"
         // 前回の変換から変更がない時
-        } else if inputTextView.text == self.oldKanji {
+//        } else if inputTextView.text == self.oldKanji {
+        } else if inputTextView.text == self.historyItems.last?.contentKanji {
             print("Do nothing because: No change from last time")
             convertButton.setColor(isEnable: false)
         }
