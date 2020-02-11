@@ -23,7 +23,6 @@ class ConvertViewController: UIViewController {
 
     // MARK: - Property
     private var convertOutputStyle: String = "hiragana"
-    private var oldKanji = ""
     var historyItems: Results<HistoryModel>!
 
     override func viewDidLoad() {
@@ -71,8 +70,6 @@ class ConvertViewController: UIViewController {
                 HUD.hide() // dismiss progress anim.
                 HUD.flash(.labeledError(title: "失敗しました", subtitle: ""), delay: 0.8)
             } else {
-                // 変換履歴を格納
-                self.oldKanji = self.inputTextView.text
                 self.outputTextView.text = result
                 self.outputTextView.textColor = UIColor.label
                 historyModel.contentKanji = self.inputTextView.text
@@ -128,7 +125,6 @@ extension ConvertViewController: UITextViewDelegate {
         if inputTextView.text.isEmpty {
             outputTextView.placeholder = "読みがなが出力されます"
         // 前回の変換から変更がない時
-//        } else if inputTextView.text == self.oldKanji {
         } else if inputTextView.text == self.historyItems.last?.contentKanji {
             print("Do nothing because: No change from last time")
             convertButton.setColor(isEnable: false)
