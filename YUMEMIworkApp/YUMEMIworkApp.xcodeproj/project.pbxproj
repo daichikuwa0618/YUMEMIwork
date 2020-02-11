@@ -22,6 +22,10 @@
 		42590E1C23E9976600528E4D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42590E1B23E9976600528E4D /* APIClient.swift */; };
 		425DBC4623EBF40400FFDD1B /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DBC4523EBF40400FFDD1B /* GradientButton.swift */; };
 		425DBC4823EBF62F00FFDD1B /* myDefColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425DBC4723EBF62F00FFDD1B /* myDefColor.swift */; };
+		426DEBB023F141B800F32A9A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 426DEBAF23F141B800F32A9A /* RealmSwift */; };
+		426DEBB223F141B800F32A9A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 426DEBB123F141B800F32A9A /* Realm */; };
+		426DEBB423F1439F00F32A9A /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DEBB323F1439F00F32A9A /* HistoryModel.swift */; };
+		426DEBB623F1650900F32A9A /* HistoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DEBB523F1650900F32A9A /* HistoryDataSource.swift */; };
 		42ADCDB923EED2AC00CE3F7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42ADCDBB23EED2AC00CE3F7B /* Localizable.strings */; };
 		42FDF9A223EAD778000CBCA9 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FDF9A123EAD778000CBCA9 /* PKHUD.framework */; };
 		42FDF9A323EAD778000CBCA9 /* PKHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42FDF9A123EAD778000CBCA9 /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -80,6 +84,8 @@
 		42590E1B23E9976600528E4D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		425DBC4523EBF40400FFDD1B /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		425DBC4723EBF62F00FFDD1B /* myDefColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myDefColor.swift; sourceTree = "<group>"; };
+		426DEBB323F1439F00F32A9A /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		426DEBB523F1650900F32A9A /* HistoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDataSource.swift; sourceTree = "<group>"; };
 		42ADCDBA23EED2AC00CE3F7B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		42ADCDBC23EED2DF00CE3F7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		42FDF9A123EAD778000CBCA9 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
@@ -99,9 +105,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426DEBB023F141B800F32A9A /* RealmSwift in Frameworks */,
 				42FDF9A223EAD778000CBCA9 /* PKHUD.framework in Frameworks */,
 				42590E1823E9970400528E4D /* Alamofire in Frameworks */,
 				2183E9D4A26664CA64C4D034 /* Pods_YUMEMIworkApp.framework in Frameworks */,
+				426DEBB223F141B800F32A9A /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				42590DE323E9869300528E4D /* ConvertViewController.swift */,
+				426DEBB523F1650900F32A9A /* HistoryDataSource.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +213,7 @@
 				42590E1423E9966B00528E4D /* GooTask.swift */,
 				42590E1923E9972600528E4D /* APIClientProtocol.swift */,
 				42590E1B23E9976600528E4D /* APIClient.swift */,
+				426DEBB323F1439F00F32A9A /* HistoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,6 +264,8 @@
 			name = YUMEMIworkApp;
 			packageProductDependencies = (
 				42590E1723E9970400528E4D /* Alamofire */,
+				426DEBAF23F141B800F32A9A /* RealmSwift */,
+				426DEBB123F141B800F32A9A /* Realm */,
 			);
 			productName = YUMEMIworkApp;
 			productReference = 42590DDC23E9869300528E4D /* YUMEMIworkApp.app */;
@@ -333,6 +345,7 @@
 			mainGroup = 42590DD323E9869300528E4D;
 			packageReferences = (
 				42590E1623E9970400528E4D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				426DEBAE23F141B800F32A9A /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 42590DDD23E9869300528E4D /* Products */;
 			projectDirPath = "";
@@ -501,10 +514,12 @@
 			files = (
 				42590DE423E9869300528E4D /* ConvertViewController.swift in Sources */,
 				425DBC4623EBF40400FFDD1B /* GradientButton.swift in Sources */,
+				426DEBB423F1439F00F32A9A /* HistoryModel.swift in Sources */,
 				42590E1C23E9976600528E4D /* APIClient.swift in Sources */,
 				425DBC4823EBF62F00FFDD1B /* myDefColor.swift in Sources */,
 				42590E1523E9966B00528E4D /* GooTask.swift in Sources */,
 				42590DE023E9869300528E4D /* AppDelegate.swift in Sources */,
+				426DEBB623F1650900F32A9A /* HistoryDataSource.swift in Sources */,
 				42590DE223E9869300528E4D /* SceneDelegate.swift in Sources */,
 				42590E1A23E9972600528E4D /* APIClientProtocol.swift in Sources */,
 			);
@@ -863,6 +878,14 @@
 				minimumVersion = 4.9.1;
 			};
 		};
+		426DEBAE23F141B800F32A9A /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -870,6 +893,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 42590E1623E9970400528E4D /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		426DEBAF23F141B800F32A9A /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 426DEBAE23F141B800F32A9A /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		426DEBB123F141B800F32A9A /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 426DEBAE23F141B800F32A9A /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

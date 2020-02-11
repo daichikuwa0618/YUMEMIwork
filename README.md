@@ -7,19 +7,27 @@
 
 現在 ver. 1.0 ですが，研究の合間を縫って期限までは改善を続けようと思います．
 
+Feb. 10, 202 (Mon) : 評価の際は v1.1 が最新版になります．これ以降のバージョンは自己満足で追加した機能ですので，無視していただいて構いません．
+
 ## アップデート情報
 - v1.1
   - 入力欄に何も記載がないときにボタンを非活性にする機能を追加
   - Light mode 使用時，ボタンにドロップシャドウを追加
+
+- v1.2 (趣味でやったことなので評価から外していただいて構いません)
+  - 変換の履歴を画面下部に表示する機能を追加
+  - 最新の変換履歴と同じ変換を試みる際はボタンが非活性になる機能を追加
+
+
 
 ## 基本的な機能
 - 入力された日本語テキストを全てひらがな・カタカナに変換する．
   - 変換には goo が提供する[ひらがな化API](https://labs.goo.ne.jp/api/jp/hiragana-translation/)を使用．
 
 ## スクリーンショット
-<img src="./demo/v1-0/light.png" width="320px">
+<img src="./demo/v1-2/light.png" width="320px">
 
-<img src="./demo/v1-0/dark.png" width="320px">
+<img src="./demo/v1-2/dark.png" width="320px">
 
 ## 自分なりに追加した機能
 - 出力の UITextView をタップすることで出力されたテキストをクリップボードにコピーする
@@ -29,6 +37,7 @@
   - コピーした時
   - 変換できなかった・通信に失敗した時
 - Dark Mode への対応
+- 変換履歴を Realm により追加した
 
 ## UI/UX に関して
 - UXに配慮して，ごちゃごちゃせず必要最低限な機能のみを実装した．
@@ -49,6 +58,7 @@
   - データベースを用いて変換履歴を表示したいと思っています．
   - 今考えているのはハーフモーダルでの表示です．
   - 自分の実力で間に合えば実装したいです．
+  - 追記 : v1.2 で追加済み
 - 履歴のお気に入り機能
 - 画像認識を用いた入力
   - カメラで読み取った日本語をひらがな・カタカナに変換する機能を実装したいです．
@@ -91,11 +101,14 @@
 
 ### 2/8 (Sat) : v1.1 リリース
 
+### 2/11 (Tue) : v1.2 リリース
+
 
 ## 使用ライブラリ (Package Manager)
 - [Alamofire](https://github.com/Alamofire/Alamofire) (Swift PM)
 - [UITextView+Placeholder](https://github.com/devxoul/UITextView-Placeholder) (Cocoapods)
 - [PKHUD](https://github.com/pkluz/PKHUD) (Carthage)
+- RealmSwift (Swift PM)
 
 ## この1週間で参考にした文献
 書き漏れがあるとは存じますが，特に参考にした文献をリストアップします．

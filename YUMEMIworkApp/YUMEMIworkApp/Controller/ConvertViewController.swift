@@ -9,6 +9,7 @@
 import UIKit
 import UITextView_Placeholder
 import PKHUD
+import RealmSwift
 
 class ConvertViewController: UIViewController {
 
@@ -18,15 +19,20 @@ class ConvertViewController: UIViewController {
     @IBOutlet private weak var kanaSelect: UISegmentedControl!
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var outputTextView: UITextView!
+    @IBOutlet weak var historyTableView: UITableView!
 
     // MARK: - Property
     private var convertOutputStyle: String = "hiragana"
-    
+    var historyItems: Results<HistoryModel>!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let realm = try! Realm()
         
         navigationBar.delegate = self
         inputTextView.delegate = self
+        historyTableView.dataSource = self as UITableViewDataSource
 
         //TODO: Localize
         inputTextView.placeholder = "ここに変換するテキストを入力してください"
@@ -43,34 +49,42 @@ class ConvertViewController: UIViewController {
 
         // HUD アニメーション
         HUD.dimsBackground = false // アニメーション時の暗転をなくす
+
+        // history
+        self.historyItems = realm.objects(HistoryModel.self)
     }
 
-// MARK: - IBAction
-    // 変換ボタンが押されたときの処理
+    // MARK: - IBAction
     @IBAction func tapConvert(_ sender: Any) {
-        
-        // input が空の時
-        if inputTextView.text.isEmpty {
 
-            print("Do nothing because: Empty input textview")
-        } else {
-            
-            HUD.show(.progress)
-            outputTextView.text = ""
-            outputTextView.placeholder = "変換中"
-            let japaneseSentence = inputTextView.text ?? ""
-            APIClient().convert(japaneseSentence, convertOutputStyle) { result in
-                if result == "error" {
-                    HUD.hide() // dismiss progress anim.
-                    HUD.flash(.labeledError(title: "失敗しました", subtitle: ""), delay: 0.8)
-                } else {
-                    self.outputTextView.text = result
-                    self.outputTextView.textColor = UIColor.label
-                    HUD.hide() // dismiss progress anim.
+        let realm = try! Realm()
+        // historyModel をインスタンス化
+        let historyModel: HistoryModel = HistoryModel()
+
+        HUD.show(.progress)
+        outputTextView.text = ""
+        outputTextView.placeholder = "変換中"
+        let japaneseSentence = inputTextView.text ?? ""
+        APIClient().convert(japaneseSentence, convertOutputStyle) { result in
+            if result == "error" {
+                HUD.hide() // dismiss progress anim.
+                HUD.flash(.labeledError(title: "失敗しました", subtitle: ""), delay: 0.8)
+            } else {
+                self.outputTextView.text = result
+                self.outputTextView.textColor = UIColor.label
+                historyModel.contentKanji = self.inputTextView.text
+                historyModel.contentRubi = self.outputTextView.text
+
+                try! realm.write {
+                    realm.add(historyModel)
                 }
+                self.historyTableView.reloadData()
+                HUD.hide() // dismiss progress anim.
+                // ボタンを無効にする
+                self.convertButton.setColor(isEnable: false)
             }
             // キーボードを閉じる
-            inputTextView.endEditing(true)
+            self.inputTextView.endEditing(true)
         }
     }
 
@@ -107,8 +121,13 @@ extension ConvertViewController: UINavigationBarDelegate {
 extension ConvertViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         convertButton.setColor(isEnable: !inputTextView.text.isEmpty)
+        // 入力が空の時
         if inputTextView.text.isEmpty {
             outputTextView.placeholder = "読みがなが出力されます"
+        // 前回の変換から変更がない時
+        } else if inputTextView.text == self.historyItems.last?.contentKanji {
+            print("Do nothing because: No change from last time")
+            convertButton.setColor(isEnable: false)
         }
     }
 }
