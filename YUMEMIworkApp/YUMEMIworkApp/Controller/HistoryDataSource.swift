@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 extension ConvertViewController: UITableViewDataSource {
 
@@ -35,12 +36,14 @@ extension ConvertViewController: UITableViewDataSource {
 
     // スワイプしたセルを削除
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete {
-            let deleteHistory = self.historyItems![indexPath.row]
+
+        let realm = try! Realm()
+
+        if editingStyle == .delete {
             try! realm.write {
-                realm.delete(deleteHistory)
+                realm.delete(self.historyItems.reversed()[(indexPath as NSIndexPath).row])
             }
-            self.historyTableView.reloadData()
+            self.historyTableView.deleteRows(at: [indexPath], with: .left)
         }
     }
 }

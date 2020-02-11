@@ -25,10 +25,11 @@ class ConvertViewController: UIViewController {
     private var convertOutputStyle: String = "hiragana"
     private var oldKanji = ""
     var historyItems: Results<HistoryModel>!
-    let realm = try! Realm()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let realm = try! Realm()
         
         navigationBar.delegate = self
         inputTextView.delegate = self
@@ -57,6 +58,7 @@ class ConvertViewController: UIViewController {
     // MARK: - IBAction
     @IBAction func tapConvert(_ sender: Any) {
 
+        let realm = try! Realm()
         // historyModel をインスタンス化
         let historyModel: HistoryModel = HistoryModel()
 
@@ -76,8 +78,8 @@ class ConvertViewController: UIViewController {
                 historyModel.contentKanji = self.inputTextView.text
                 historyModel.contentRubi = self.outputTextView.text
 
-                try! self.realm.write {
-                    self.realm.add(historyModel)
+                try! realm.write {
+                    realm.add(historyModel)
                 }
                 self.historyTableView.reloadData()
                 HUD.hide() // dismiss progress anim.
