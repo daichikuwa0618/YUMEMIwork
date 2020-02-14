@@ -26,12 +26,12 @@ class APIClient: APIClientType {
             do {
                 let task: GooTask = try decoder.decode(GooTask.self, from: data)
                 print(task.converted)
-                completionHandler(task.converted)
+                completionHandler(.success(task.converted))
             } catch {
                 // MARK: error handling (need more management)
                 print(error)
                 print(type(of: error)) // -> DecodingError
-                completionHandler("error")
+                completionHandler(.failure(.unknown))
             }
         }
     }
