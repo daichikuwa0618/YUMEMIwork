@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class HistoryModel: Object {
+
     @objc dynamic var contentKanji: String? = nil
     @objc dynamic var contentRubi: String? = nil
 }

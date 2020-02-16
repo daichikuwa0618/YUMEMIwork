@@ -66,11 +66,9 @@ class ConvertViewController: UIViewController {
         outputTextView.placeholder = "変換中"
         let japaneseSentence = inputTextView.text ?? ""
         APIClient().convert(japaneseSentence, convertOutputStyle) { result in
-            if result == "error" {
-                HUD.hide() // dismiss progress anim.
-                HUD.flash(.labeledError(title: "失敗しました", subtitle: ""), delay: 0.8)
-            } else {
-                self.outputTextView.text = result
+            switch result {
+            case let .success(convertedString):
+                self.outputTextView.text = convertedString
                 self.outputTextView.textColor = UIColor.label
                 historyModel.contentKanji = self.inputTextView.text
                 historyModel.contentRubi = self.outputTextView.text
@@ -82,6 +80,18 @@ class ConvertViewController: UIViewController {
                 HUD.hide() // dismiss progress anim.
                 // ボタンを無効にする
                 self.convertButton.setColor(isEnable: false)
+            case let .failure(error):
+                HUD.hide() // dismiss progress anim.
+                switch error {
+                case .unknown:
+                    HUD.flash(.labeledError(title: "失敗しました", subtitle: "unknown error"), delay: 0.8)
+                case .limitExceeded:
+                    HUD.flash(.labeledError(title: "失敗しました", subtitle: "limit exceeded"), delay: 0.8)
+                case .tooLong:
+                    HUD.flash(.labeledError(title: "失敗しました", subtitle: "too long"), delay: 0.8)
+                case .unexpected:
+                    HUD.flash(.labeledError(title: "失敗しました", subtitle: "unexpected form"), delay: 0.8)
+                }
             }
             // キーボードを閉じる
             self.inputTextView.endEditing(true)

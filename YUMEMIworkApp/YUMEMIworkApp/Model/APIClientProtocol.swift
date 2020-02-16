@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias APIClientResult = String
+typealias APIClientResult = Result<String, APIError>
 
 protocol APIClientType {
 
