@@ -102,6 +102,9 @@ class ConvertViewController: UIViewController {
     @IBAction func kanaSelectControl(_ sender: UISegmentedControl) {
 
         convertOutputStyle = sender.selectedSegmentIndex == 1 ? "katakana" : "hiragana"
+        if !self.inputTextView.text.isEmpty {
+            self.convertButton.setColor(isEnable: true)
+        }
     }
     
     // TextView とキーボード以外をタップしたらキーボードを閉じる
