@@ -28,9 +28,7 @@ class APIClient: APIClientType {
                 print(task.converted)
                 completionHandler(.success(task.converted))
             } catch {
-                // MARK: error handling (need more management)
-                print(error)
-                print(type(of: error)) // -> DecodingError
+                // TODO: error handling (need more management)
                 completionHandler(.failure(.unknown))
             }
         }

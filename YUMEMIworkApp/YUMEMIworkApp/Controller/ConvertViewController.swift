@@ -82,7 +82,16 @@ class ConvertViewController: UIViewController {
                 self.convertButton.setColor(isEnable: false)
             case let .failure(error):
                 HUD.hide() // dismiss progress anim.
-                HUD.flash(.labeledError(title: "失敗しました", subtitle: ""), delay: 0.8)
+                switch error {
+                case .unknown:
+                    HUD.flash(.labeledError(title: "失敗しました", subtitle: "unknown error"), delay: 0.8)
+                case .limitExceeded:
+                    HUD.flash(.labeledError(title: "失敗しました", subtitle: "limit exceeded"), delay: 0.8)
+                case .tooLong:
+                    HUD.flash(.labeledError(title: "失敗しました", subtitle: "too long"), delay: 0.8)
+                case .unexpected:
+                    HUD.flash(.labeledError(title: "失敗しました", subtitle: "unexpected form"), delay: 0.8)
+                }
             }
             // キーボードを閉じる
             self.inputTextView.endEditing(true)
