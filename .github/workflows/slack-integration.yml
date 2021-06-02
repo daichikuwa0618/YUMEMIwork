@@ -1,0 +1,27 @@
+name: Slack Integration
+
+on:
+  pull_request:
+    types: [ opened, reopened, ready_for_review, closed ]
+  issues:
+    types: [ opened, reopened, closed ]
+  pull_request_review:
+    types: [ submitted ]
+  issue_comment:
+    types: [ created ]
+
+jobs:
+  slack-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: hkusu/slack-integration@v1
+        with:
+          slack-token: ${{ secrets.SLACK_INTEGRATION_TOKEN }}
+          channel: 'ojt_daichi_hayashi'
+          subscribe-pulls: true
+          subscribe-issues: true
+          subscribe-reviews: true
+          subscribe-pull-comments: true
+          subscribe-issue-comments: true
+
+
