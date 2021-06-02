@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: hkusu/slack-integration@v1
         with:
-          slack-token: ${{ secrets.SLACK_INTEGRATION_TOKEN }}
+          slack-token: ${{ secrets.SLACK_TOKEN }}
           channel: 'ojt_daichi_hayashi'
           subscribe-pulls: true
           subscribe-issues: true
